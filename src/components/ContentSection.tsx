@@ -1,55 +1,115 @@
-import { Filter, Smartphone, Rocket } from "lucide-react";
-
-const modules = [
-  {
-    icon: Filter,
-    title: "ESTRUCTURA DE CONVERSIÓN PROBADA",
-    description: "Implementamos la fórmula psicológica de ventas (Portada, Beneficios, Testimonios, Bonos, etc.) que ha generado millones en Hotmart."
-  },
-  {
-    icon: Smartphone,
-    title: "DISEÑO ADAPTABLE Y PROFESIONAL",
-    description: "Tu página se verá y funcionará a la perfección en cualquier teléfono, tablet u ordenador, proyectando una imagen de máxima confianza."
-  },
-  {
-    icon: Rocket,
-    title: "TECNOLOGÍA DE CARGA INSTANTÁNEA",
-    description: "Construida con código de última generación para que cargue al instante, mejorando la experiencia de usuario y tu posicionamiento en Google."
-  }
-];
+import { Card, CardContent } from "@/components/ui/card";
+import { Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const ContentSection = () => {
-  return (
-    <section className="py-20 md:py-32 bg-background">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-5xl font-heading text-center mb-6">
-          ¿QUÉ INCLUYE TU LANDING PAGE DE ALTA CONVERSIÓN?
-        </h2>
-        
-        <p className="text-center text-muted-foreground text-lg mb-16 max-w-2xl mx-auto">
-          Los 3 pilares sobre los que construimos tu nueva máquina de ventas.
-        </p>
+  const includedFeatures = [
+    "Landing Page Profesional de Alta Conversión - Valor: $240",
+    "Guía de Copywriting en PDF - Valor: $97",
+    "Paleta de Colores Personalizada - Valor: $67",
+    "Instalación en tu Dominio - Valor: $97",
+    "30 Días de Soporte por Email - Valor: $36"
+  ];
 
-        <div className="space-y-6 max-w-4xl mx-auto">
-          {modules.map((module, index) => (
-            <div 
-              key={index}
-              className="bg-card p-8 rounded-xl border border-border hover-lift flex gap-6 items-start"
-            >
-              <div className="bg-primary/10 p-4 rounded-lg flex-shrink-0">
-                <module.icon className="w-8 h-8 text-primary" />
+  const features = [
+    "Estructura de conversión probada",
+    "Diseño adaptable y profesional",
+    "Tecnología de carga instantánea",
+    "Formulario de contacto integrado",
+    "Compatible con todos los dispositivos",
+    "Optimizada para SEO",
+    "Integración con redes sociales",
+    "1 semana de ajustes post-entrega"
+  ];
+
+  const handleCTAClick = () => {
+    window.open('https://go.hotmart.com/M102318829D', '_blank');
+  };
+
+  return (
+    <section className="py-20 md:py-32 bg-gray-900">
+      <div className="container mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            ¿QUÉ INCLUYE TU LANDING PAGE
+          </h2>
+          <h3 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            DE ALTA CONVERSIÓN?
+          </h3>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            La página completa con todo lo necesario para vender
+          </p>
+        </div>
+
+        {/* Main Content Card */}
+        <div className="max-w-4xl mx-auto mb-12">
+          <Card className="bg-gradient-to-br from-gray-800 to-gray-900 border-2 border-primary/30">
+            <CardContent className="p-8 md:p-12">
+              {/* What's Included List */}
+              <div className="space-y-4 mb-8">
+                {includedFeatures.map((feature, index) => (
+                  <div key={index} className="flex items-start gap-4 p-4 bg-gray-800/50 rounded-lg">
+                    <div className="flex-shrink-0">
+                      <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                        <Check className="h-4 w-4 text-gray-900" />
+                      </div>
+                    </div>
+                    <p className="text-gray-200 text-lg flex-1">{feature}</p>
+                  </div>
+                ))}
               </div>
+
+              {/* Divider */}
+              <div className="border-t border-gray-700 my-8"></div>
+
+              {/* Features Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {features.map((feature, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <Check className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span className="text-gray-300">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Pricing Box */}
+        <div className="max-w-2xl mx-auto">
+          <Card className="bg-gray-800 border-2 border-primary">
+            <CardContent className="p-8 text-center">
+              <p className="text-gray-300 text-lg mb-2">Valor Total del Paquete Completo:</p>
+              <p className="text-gray-400 text-3xl line-through mb-2">$537</p>
               
-              <div>
-                <h3 className="text-xl md:text-2xl font-heading mb-3 text-foreground">
-                  {module.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {module.description}
-                </p>
+              <div className="my-6">
+                <p className="text-white text-2xl font-bold mb-2">Precio Especial Hoy:</p>
+                <p className="text-6xl font-bold text-primary mb-2">$49.99</p>
+                <p className="text-sm text-gray-400">Pago único • Sin cargos ocultos • Sin mensualidades</p>
               </div>
-            </div>
-          ))}
+
+              <Button 
+                onClick={handleCTAClick}
+                size="lg"
+                className="w-full bg-primary hover:bg-primary/90 text-gray-900 font-bold text-lg py-7 rounded-lg shadow-2xl hover:shadow-primary/50 transition-all duration-300"
+              >
+                OBTENER MI LANDING PAGE POR SOLO $49.99
+              </Button>
+
+              <p className="text-xs text-gray-500 mt-4">
+                💳 Pago 100% seguro a través de Hotmart
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Guarantee Badge */}
+        <div className="text-center mt-12">
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-primary/10 border border-primary/30 rounded-full">
+            <Check className="h-5 w-5 text-primary" />
+            <span className="text-primary font-bold">Garantía de 7 días o te devolvemos tu dinero</span>
+          </div>
         </div>
       </div>
     </section>

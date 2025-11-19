@@ -1,51 +1,90 @@
-import { CheckCircle2, Clock, TrendingUp, Shield } from "lucide-react";
-
-const benefits = [
-  {
-    icon: Clock,
-    title: "LANZA EN TIEMPO RÉCORD",
-    description: "Olvídate de semanas de frustración. Tu landing page profesional estará en línea y lista para recibir tráfico en 48 horas o menos."
-  },
-  {
-    icon: TrendingUp,
-    title: "CONVIERTE VISITANTES EN CLIENTES",
-    description: "Usamos una estructura probada que guía a tus prospectos paso a paso, eliminando dudas y llevándolos directamente al botón de compra."
-  },
-  {
-    icon: Shield,
-    title: "PROYECTA MÁXIMA CONFIANZA",
-    description: "Con un diseño premium y una velocidad de carga instantánea, tu marca se verá profesional y confiable desde el primer segundo."
-  }
-];
+import { Card, CardContent } from "@/components/ui/card";
+import { Clock, TrendingUp, Shield } from "lucide-react";
 
 const BenefitsSection = () => {
-  return (
-    <section className="py-20 md:py-32 bg-background">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-5xl font-heading text-center mb-16">
-          LA TRANSFORMACIÓN PARA TU NEGOCIO
-        </h2>
+  const benefits = [
+    {
+      icon: Clock,
+      title: "LANZA EN TIEMPO RÉCORD",
+      description: "Olvídate de semanas de desarrollo. Tu landing page estará lista en solo 48 horas, optimizada y funcionando.",
+      highlight: "48 horas de entrega"
+    },
+    {
+      icon: TrendingUp,
+      title: "CONVIERTE VISITANTES EN CLIENTES",
+      description: "Diseño probado para maximizar conversiones. Cada elemento está pensado para guiar a tus visitantes hacia la acción.",
+      highlight: "Optimizada para vender"
+    },
+    {
+      icon: Shield,
+      title: "PROYECTO MÁXIMA CONFIANZA",
+      description: "Con diseño profesional y estructura clara, transmites credibilidad desde el primer segundo. Tus clientes sentirán que están en buenas manos.",
+      highlight: "Diseño profesional"
+    }
+  ];
 
-        <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-          {benefits.map((benefit, index) => (
-            <div 
-              key={index}
-              className="bg-card p-8 rounded-xl border border-border hover-lift"
-            >
-              <div className="flex items-start gap-4 mb-4">
-                <CheckCircle2 className="w-8 h-8 text-accent flex-shrink-0 mt-1" />
-                <benefit.icon className="w-10 h-10 text-primary" />
-              </div>
-              
-              <h3 className="text-xl md:text-2xl font-heading mb-3 text-foreground">
-                {benefit.title}
-              </h3>
-              
-              <p className="text-muted-foreground leading-relaxed">
-                {benefit.description}
-              </p>
-            </div>
-          ))}
+  return (
+    <section className="py-20 md:py-32 bg-gray-900">
+      <div className="container mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            LA TRANSFORMACIÓN PARA TU NEGOCIO
+          </h2>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            No es solo una landing page, es tu nuevo canal de ventas 24/7
+          </p>
+        </div>
+
+        {/* Benefits Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {benefits.map((benefit, index) => {
+            const Icon = benefit.icon;
+            return (
+              <Card 
+                key={index} 
+                className="bg-gray-800 border-2 border-gray-700 hover:border-primary transition-all duration-300 group"
+              >
+                <CardContent className="p-8 text-center">
+                  {/* Icon */}
+                  <div className="mb-6 flex justify-center">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                      <Icon className="h-8 w-8 text-primary" />
+                    </div>
+                  </div>
+
+                  {/* Highlight Badge */}
+                  <div className="inline-block bg-primary/10 border border-primary/30 rounded-full px-4 py-1 mb-4">
+                    <span className="text-primary text-xs font-bold uppercase tracking-wide">
+                      {benefit.highlight}
+                    </span>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-white mb-4 leading-tight">
+                    {benefit.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-400 leading-relaxed">
+                    {benefit.description}
+                  </p>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+
+        {/* Bottom Statement */}
+        <div className="text-center mt-16 max-w-3xl mx-auto">
+          <div className="bg-gradient-to-r from-gray-800 to-gray-900 border border-gray-700 rounded-2xl p-8">
+            <p className="text-xl text-gray-300 leading-relaxed mb-4">
+              "La mayoría de los negocios pierden clientes potenciales cada día por no tener una landing page efectiva."
+            </p>
+            <p className="text-lg text-primary font-bold">
+              No dejes que eso te pase a ti.
+            </p>
+          </div>
         </div>
       </div>
     </section>

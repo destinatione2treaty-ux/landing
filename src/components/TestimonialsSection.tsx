@@ -1,58 +1,80 @@
-import { Star } from "lucide-react";
-
-const testimonials = [
-  {
-    name: "María P.",
-    text: "Este producto superó todas mis expectativas. En solo 2 semanas vi resultados reales. ¡Lo recomiendo al 100%!",
-    rating: 5
-  },
-  {
-    name: "Carlos R.",
-    text: "Finalmente algo que funciona de verdad. Claro, directo y sin rodeos. Exactamente lo que necesitaba.",
-    rating: 5
-  },
-  {
-    name: "Ana G.",
-    text: "La mejor inversión que he hecho este año. El contenido es oro puro y el soporte excepcional.",
-    rating: 5
-  }
-];
+import { Card, CardContent } from "@/components/ui/card";
+import { Star, Quote } from "lucide-react";
 
 const TestimonialsSection = () => {
+  const testimonials = [
+    {
+      name: "Carmen Cecilia",
+      business: "People Sin Límites",
+      role: "Coach & Tarot",
+      text: "La landing page superó mis expectativas. El diseño es hermoso y profesional, y lo mejor es que empecé a recibir consultas desde el primer día. Totalmente recomendado.",
+      rating: 5
+    },
+    {
+      name: "Ernesto Márquez",
+      business: "Proyecto Lumen",
+      role: "Transformación Masculina",
+      text: "Como desarrollador, aprecio la calidad del código y el diseño. Mi landing para Proyecto Lumen quedó perfecta y mis clientes potenciales me dicen que se ve muy profesional.",
+      rating: 5
+    },
+    {
+      name: "Alejandro Suárez",
+      business: "Disuaferca",
+      role: "Importación & Exportación",
+      text: "Necesitaba una presencia web rápida para mi negocio de importación. En 48 horas tenía mi landing funcionando. La inversión se pagó sola con los primeros clientes.",
+      rating: 5
+    }
+  ];
+
   return (
-    <section className="py-20 md:py-32 bg-secondary/30">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-5xl font-heading text-center mb-16">
-          Lo que dicen nuestros clientes
-        </h2>
+    <section className="py-20 md:py-32 bg-gray-900">
+      <div className="container mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            LO QUE DICEN NUESTROS CLIENTES
+          </h2>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            Más de 50 emprendedores ya transformaron su negocio
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Testimonials Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {testimonials.map((testimonial, index) => (
-            <div 
-              key={index}
-              className="bg-card p-8 rounded-xl border border-border hover-lift"
-            >
-              <div className="flex gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-accent text-accent" />
-                ))}
-              </div>
+            <Card key={index} className="bg-gray-800 border-gray-700 hover:border-primary/50 transition-all duration-300">
+              <CardContent className="p-6">
+                {/* Quote Icon */}
+                <Quote className="h-8 w-8 text-primary mb-4 opacity-50" />
 
-              <p className="text-foreground mb-6 italic leading-relaxed">
-                "{testimonial.text}"
-              </p>
+                {/* Stars */}
+                <div className="flex mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                  ))}
+                </div>
 
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center font-heading text-lg">
-                  {testimonial.name.charAt(0)}
+                {/* Testimonial Text */}
+                <p className="text-gray-300 mb-6 leading-relaxed">
+                  "{testimonial.text}"
+                </p>
+
+                {/* Author Info */}
+                <div className="border-t border-gray-700 pt-4">
+                  <p className="font-bold text-white">{testimonial.name}</p>
+                  <p className="text-sm text-primary font-medium">{testimonial.business}</p>
+                  <p className="text-xs text-gray-400">{testimonial.role}</p>
                 </div>
-                <div>
-                  <p className="font-semibold text-foreground">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">Cliente Verificado</p>
-                </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           ))}
+        </div>
+
+        {/* Trust Statement */}
+        <div className="text-center mt-12">
+          <p className="text-gray-400 text-lg">
+            ✨ Únete a decenas de emprendedores que ya están convirtiendo visitantes en clientes
+          </p>
         </div>
       </div>
     </section>

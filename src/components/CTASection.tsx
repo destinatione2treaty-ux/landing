@@ -1,64 +1,119 @@
-import { CheckCircle2, CreditCard, Shield } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Clock, Shield } from "lucide-react";
 
 const CTASection = () => {
+  const handleCTAClick = () => {
+    window.open('https://go.hotmart.com/M102318829D', '_blank');
+  };
+
   return (
-    <section id="cta-section" className="py-20 md:py-32 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-heading text-center mb-12">
-            TU ACCESO INSTANTÁNEO A TODO ESTO:
-          </h2>
+    <section className="py-20 md:py-32 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
 
-          <div className="bg-card p-8 md:p-12 rounded-2xl border-2 border-primary/50 mb-12">
-            <div className="space-y-4 mb-8">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-                <p className="text-foreground text-lg">Landing Page Profesional de Alta Conversión (Valor $297)</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-                <p className="text-foreground text-lg">Guía de Copywriting en PDF (Bono - Valor $67)</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-                <p className="text-foreground text-lg">Paleta de Colores Personalizada (Bono - Valor $97)</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-                <p className="text-foreground text-lg">Instalación en tu Dominio (Bono - Valor $183)</p>
-              </div>
-            </div>
-
-            <div className="border-t border-border pt-8 mb-8">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-muted-foreground line-through text-xl">Valor Total: $644</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-2xl font-heading text-foreground">Precio Especial Hoy:</span>
-                <span className="text-4xl md:text-5xl font-heading text-primary">$49.99</span>
-              </div>
-            </div>
-
-            <a 
-              href="https://pay.hotmart.com/M102318829D"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block w-full bg-primary hover:bg-primary/90 text-primary-foreground text-base md:text-xl py-6 md:py-8 rounded-xl font-bold uppercase tracking-wider hover-lift shadow-glow-primary transition-colors"
-            >
-              <span className="md:hidden">¡OBTENER OFERTA AHORA!</span>
-              <span className="hidden md:inline">SÍ, ¡QUIERO MI LANDING PAGE POR SÓLO $49.99!</span>
-            </a>
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Urgency Badge */}
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-primary/10 border-2 border-primary/30 rounded-full">
+            <Clock className="h-5 w-5 text-primary animate-pulse" />
+            <span className="text-primary font-bold uppercase tracking-wide">Oferta Por Tiempo Limitado</span>
           </div>
+        </div>
 
-          <div className="flex flex-wrap justify-center items-center gap-6 text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <CreditCard className="w-5 h-5" />
-              <span className="text-sm">Visa • Mastercard • PayPal</span>
+        {/* Main Headline */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            TU ACCESO INSTANTÁNEO A
+          </h2>
+          <h3 className="text-4xl md:text-6xl font-bold text-primary mb-6">
+            TODO ESTO:
+          </h3>
+        </div>
+
+        {/* What's Included Box */}
+        <div className="max-w-2xl mx-auto mb-12">
+          <div className="bg-gray-800 border-2 border-primary/30 rounded-2xl p-8">
+            <div className="space-y-4">
+              {[
+                { text: "Landing Page Profesional de Alta Conversión", value: "$240" },
+                { text: "Guía de Copywriting en PDF", value: "$97" },
+                { text: "Paleta de Colores Personalizada", value: "$67" },
+                { text: "Instalación en tu Dominio", value: "$97" },
+                { text: "30 Días de Soporte por Email", value: "$36" }
+              ].map((item, index) => (
+                <div key={index} className="flex items-center justify-between p-3 bg-gray-900/50 rounded-lg">
+                  <span className="text-gray-200">{item.text}</span>
+                  <span className="text-primary font-bold">{item.value}</span>
+                </div>
+              ))}
             </div>
-            <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-accent" />
-              <span className="text-sm font-semibold">Garantía de 7 Días</span>
+
+            <div className="border-t-2 border-gray-700 mt-6 pt-6">
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-white text-xl font-bold">Valor Normal:</span>
+                <span className="text-gray-400 text-2xl line-through">$537.00</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-white text-2xl font-bold">Precio Especial Hoy:</span>
+                <span className="text-primary text-4xl font-bold">$49.99</span>
+              </div>
             </div>
+          </div>
+        </div>
+
+        {/* Main CTA */}
+        <div className="text-center mb-8">
+          <Button 
+            onClick={handleCTAClick}
+            size="lg"
+            className="bg-primary hover:bg-primary/90 text-gray-900 font-bold text-xl px-12 py-8 rounded-xl shadow-2xl hover:shadow-primary/50 transition-all duration-300 group"
+          >
+            OBTENER MI LANDING PAGE POR SOLO $49.99
+            <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+          </Button>
+          <p className="text-sm text-gray-400 mt-4">
+            💳 Pago 100% seguro • Garantía de 7 días
+          </p>
+        </div>
+
+        {/* Trust Elements */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
+          <div className="flex items-center gap-3">
+            <Shield className="h-6 w-6 text-primary" />
+            <span className="text-gray-300">Pago Seguro con Hotmart</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <Clock className="h-6 w-6 text-primary" />
+            <span className="text-gray-300">Entrega en 48 horas</span>
+          </div>
+        </div>
+
+        {/* Limited Availability */}
+        <div className="text-center">
+          <div className="inline-block bg-gray-800 border border-gray-700 rounded-xl px-8 py-6">
+            <p className="text-white text-lg mb-2">
+              ⚡ Solo <span className="text-primary font-bold">10 spots disponibles</span> este mes
+            </p>
+            <p className="text-gray-400 text-sm">
+              Después del límite, el precio sube a $97
+            </p>
+            
+            {/* Progress Bar */}
+            <div className="mt-4 w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+              <div className="bg-primary h-full rounded-full" style={{ width: '70%' }}></div>
+            </div>
+            <p className="text-xs text-gray-500 mt-2">7 de 10 espacios ocupados</p>
+          </div>
+        </div>
+
+        {/* Final Guarantee */}
+        <div className="text-center mt-12">
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-primary/10 border border-primary/30 rounded-full">
+            <Shield className="h-5 w-5 text-primary" />
+            <span className="text-primary font-bold">
+              Garantía de Satisfacción de 7 Días o tu Dinero de Vuelta
+            </span>
           </div>
         </div>
       </div>
