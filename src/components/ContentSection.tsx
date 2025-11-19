@@ -22,8 +22,26 @@ const ContentSection = () => {
     "1 semana de ajustes post-entrega"
   ];
 
+  // Función para hacer scroll suave al checkout
   const handleCTAClick = () => {
-    window.open('https://go.hotmart.com/M102318829D', '_blank');
+    const checkoutSection = document.getElementById('checkout-section');
+    
+    if (checkoutSection) {
+      const offset = 80;
+      const elementPosition = checkoutSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      // Efecto visual de highlight
+      checkoutSection.style.animation = 'pulse 0.5s ease-in-out';
+      setTimeout(() => {
+        checkoutSection.style.animation = '';
+      }, 500);
+    }
   };
 
   return (
@@ -89,6 +107,7 @@ const ContentSection = () => {
                 <p className="text-sm text-gray-400">Pago único • Sin cargos ocultos • Sin mensualidades</p>
               </div>
 
+              {/* BOTÓN ACTUALIZADO - SCROLL AL CHECKOUT */}
               <Button 
                 onClick={handleCTAClick}
                 size="lg"

@@ -2,8 +2,26 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Star } from "lucide-react";
 
 const HeroSection = () => {
+  // Función para hacer scroll suave al checkout
   const handleCTAClick = () => {
-    window.open('https://go.hotmart.com/M102318829D', '_blank');
+    const checkoutSection = document.getElementById('checkout-section');
+    
+    if (checkoutSection) {
+      const offset = 80;
+      const elementPosition = checkoutSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      // Efecto visual de highlight
+      checkoutSection.style.animation = 'pulse 0.5s ease-in-out';
+      setTimeout(() => {
+        checkoutSection.style.animation = '';
+      }, 500);
+    }
   };
 
   return (
@@ -44,7 +62,7 @@ const HeroSection = () => {
           <p className="text-sm text-gray-400 mt-2">Pago único • Sin mensualidades</p>
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Button - AHORA CON SCROLL AL CHECKOUT */}
         <Button 
           onClick={handleCTAClick}
           size="lg"
