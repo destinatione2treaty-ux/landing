@@ -1,3 +1,4 @@
+import MetaPixel from '@/components/MetaPixel';  // ← AGREGAR esta línea al inicio
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,13 +13,13 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <MetaPixel pixelId="2823346924525192" />  {/* ← AGREGAR esta línea */}
       <Toaster />
       <Sonner />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/gracias" element={<ThankYou />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
@@ -26,4 +27,4 @@ const App = () => (
   </QueryClientProvider>
 );
 
-export default App;
+export default App; 

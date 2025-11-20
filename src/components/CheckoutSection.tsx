@@ -1,70 +1,63 @@
-/**
- * CheckoutSection - Versión alternativa con iframe
- * Usa esta versión si el checkout embebido da error de "Offer not found"
- */
+import CheckoutToggle from './CheckoutToggle';
+import { useTranslation } from '@/translations';
 
-const CheckoutSection = () => {
+type CheckoutMode = 'embedded' | 'hotmart';
+
+interface CheckoutSectionProps {
+  defaultMode: CheckoutMode; // Para Landing A o Landing B
+}
+
+const CheckoutSection = ({ defaultMode }: CheckoutSectionProps) => {
+  const { t } = useTranslation();
+
   return (
     <section 
       id="checkout-section" 
       className="checkout-section"
     >
       <div className="checkout-container">
-        {/* Header de la sección */}
         <div className="checkout-header">
           <h2 className="checkout-title">
-            Completa Tu Orden
+            {t.checkout.title}
           </h2>
           <p className="checkout-subtitle">
-            Tu landing page profesional está a solo un paso. Completa tu información de pago de forma segura.
+            {t.checkout.subtitle}
           </p>
           
-          {/* Trust badges */}
           <div className="trust-badges">
             <div className="trust-badge">
               <svg className="trust-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
-              <span>Pago 100% Seguro</span>
+              <span>{t.checkout.trust1}</span>
             </div>
             <div className="trust-badge">
               <svg className="trust-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <span>Entrega en 48 Horas</span>
+              <span>{t.checkout.trust2}</span>
             </div>
             <div className="trust-badge">
               <svg className="trust-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
               </svg>
-              <span>Múltiples Métodos de Pago</span>
+              <span>{t.checkout.trust3}</span>
             </div>
           </div>
         </div>
 
-        {/* Checkout en iframe */}
         <div className="checkout-content">
-          <iframe 
-            src="https://pay.hotmart.com/M102318829D?off=43vz0ocq"
-            style={{
-              width: '100%',
-              minHeight: '800px',
-              border: 'none',
-              borderRadius: '8px'
-            }}
-            title="Checkout Hotmart"
-          />
+          <CheckoutToggle defaultMode={defaultMode} />
         </div>
 
-        {/* Garantía y Soporte */}
         <div className="checkout-footer">
           <div className="guarantee-badge">
             <svg className="guarantee-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
             </svg>
             <div>
-              <h4>Garantía de Satisfacción</h4>
-              <p>Si no estás 100% satisfecho, te devolvemos tu dinero</p>
+              <h4>{t.checkout.guaranteeTitle}</h4>
+              <p>{t.checkout.guaranteeText}</p>
             </div>
           </div>
         </div>
@@ -141,9 +134,8 @@ const CheckoutSection = () => {
           background: white;
           border-radius: 16px;
           box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-          padding: 20px;
+          padding: 40px;
           margin-bottom: 40px;
-          overflow: hidden;
         }
 
         .checkout-footer {
@@ -203,11 +195,7 @@ const CheckoutSection = () => {
           }
 
           .checkout-content {
-            padding: 16px;
-          }
-
-          .checkout-content iframe {
-            min-height: 600px !important;
+            padding: 24px 16px;
           }
 
           .guarantee-badge {
