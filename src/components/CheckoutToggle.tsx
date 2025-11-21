@@ -6,7 +6,7 @@ import { trackInitiateCheckout } from './MetaPixel';
 type CheckoutMode = 'embedded' | 'hotmart';
 
 interface CheckoutToggleProps {
-  defaultMode: CheckoutMode; // 'embedded' para Landing A, 'hotmart' para Landing B
+  defaultMode: CheckoutMode;
 }
 
 const CheckoutToggle = ({ defaultMode }: CheckoutToggleProps) => {
@@ -22,12 +22,10 @@ const CheckoutToggle = ({ defaultMode }: CheckoutToggleProps) => {
 
   return (
     <div className="checkout-toggle-container">
-      {/* Payment Method Selector */}
       <div className="payment-method-selector">
         <h3 className="selector-title">{t.checkout.paymentMethod}</h3>
         
         <div className="radio-buttons">
-          {/* Opción 1: Checkout Embebido */}
           <label 
             className={`radio-option ${selectedMode === 'embedded' ? 'selected' : ''}`}
             onClick={() => handleModeChange('embedded')}
@@ -45,7 +43,6 @@ const CheckoutToggle = ({ defaultMode }: CheckoutToggleProps) => {
             </div>
           </label>
 
-          {/* Opción 2: Hotmart */}
           <label 
             className={`radio-option ${selectedMode === 'hotmart' ? 'selected' : ''}`}
             onClick={() => handleModeChange('hotmart')}
@@ -65,45 +62,20 @@ const CheckoutToggle = ({ defaultMode }: CheckoutToggleProps) => {
         </div>
       </div>
 
-      {/* Checkout Display */}
       <div className="checkout-display">
         {selectedMode === 'embedded' ? (
           <div className="embedded-checkout-wrapper">
+            {/* Checkout embebido de Hotmart */}
             <HotmartCheckout />
-            {/* Link alternativo */}
-            <div className="alternative-link">
-              <p>
-                {t.checkout.switchTo}{' '}
-                <button 
-                  onClick={() => handleModeChange('hotmart')}
-                  className="switch-link"
-                >
-                  {t.checkout.switchToHotmart}
-                </button>
-                ?
-              </p>
-            </div>
           </div>
         ) : (
           <div className="hotmart-redirect-wrapper">
+            {/* Iframe con URL de Hotmart */}
             <iframe 
               src={hotmartUrl}
               className="hotmart-iframe"
               title="Hotmart Checkout"
             />
-            {/* Link alternativo */}
-            <div className="alternative-link">
-              <p>
-                {t.checkout.switchTo}{' '}
-                <button 
-                  onClick={() => handleModeChange('embedded')}
-                  className="switch-link"
-                >
-                  {t.checkout.switchToEmbedded}
-                </button>
-                ?
-              </p>
-            </div>
           </div>
         )}
       </div>
@@ -198,35 +170,6 @@ const CheckoutToggle = ({ defaultMode }: CheckoutToggleProps) => {
           min-height: 800px;
           border: none;
           border-radius: 8px;
-        }
-
-        .alternative-link {
-          text-align: center;
-          margin-top: 16px;
-          padding: 12px;
-          background: #f8f9fa;
-          border-radius: 8px;
-        }
-
-        .alternative-link p {
-          font-size: 0.9rem;
-          color: #6c757d;
-          margin: 0;
-        }
-
-        .switch-link {
-          background: none;
-          border: none;
-          color: #D4AF37;
-          font-weight: 600;
-          text-decoration: underline;
-          cursor: pointer;
-          padding: 0;
-          font-size: inherit;
-        }
-
-        .switch-link:hover {
-          color: #b8941f;
         }
 
         @media (max-width: 768px) {

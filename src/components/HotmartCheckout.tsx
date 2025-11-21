@@ -38,7 +38,7 @@ const HotmartCheckout = () => {
         if (window.checkoutElements && checkoutRef.current) {
           // Inicializar el checkout embebido
           elementsRef.current = window.checkoutElements.init('inlineCheckout', {
-            offer: 'M1023188290'
+            offer: '43vz0ocq'
           });
 
           // Montar el checkout en el div
