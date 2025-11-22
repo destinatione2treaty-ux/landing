@@ -83,14 +83,15 @@ const ContentSection = () => {
                 <p className="text-sm text-gray-400">{t.content.paymentNote}</p>
               </div>
 
-              <Button 
-                onClick={handleCTAClick}
-                size="lg"
-               className="w-full sm:w-auto h-auto py-4 px-8 text-base sm:text-lg font-bold uppercase tracking-wider whitespace-normal text-center bg-[#FCD34D] text-black hover:bg-[#F59E0B]"
-                <span className="text-center leading-tight">
-                  {t.content.ctaButton}
-                </span>
-              </Button>
+<Button 
+  onClick={handleCTAClick}
+  size="lg"
+  className="w-full sm:w-auto h-auto py-4 px-8 text-base sm:text-lg font-bold uppercase tracking-wider whitespace-normal text-center bg-[#FCD34D] text-black hover:bg-[#F59E0B]"
+>
+  <span className="text-center leading-tight">
+    {t.content.ctaButton}
+  </span>
+</Button>
 
               <p className="text-xs text-gray-500 mt-4">
                 {t.content.securePayment}
