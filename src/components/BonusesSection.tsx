@@ -31,36 +31,37 @@ const BonusesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
-          {t.bonuses.items.map((bonus, index) => {
-            const Icon = icons[index];
-            return (
-              <Card key={index} className="bg-gray-900 border-gray-700 hover:border-primary/50 transition-all duration-300 group">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <Icon className="h-6 w-6 text-primary" />
-                      </div>
-                    </div>
+        <div key={index} className="bg-[#1A1F2E] p-5 rounded-xl border border-gray-800 flex gap-4">
+          
+          {/* 1. COLUMNA IZQUIERDA: El Icono (Fijo) */}
+          <div className="shrink-0 w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center text-2xl border border-white/10">
+            {/* Mantén tu lógica de iconos aquí. Ejemplo: */}
+            {index === 0 && "📄"}
+            {index === 1 && "🎨"}
+            {index === 2 && "🌐"}
+            {index === 3 && "📧"}
+          </div>
 
-                    <div className="flex-1">
-{/* --- AQUÍ ESTÁ EL CAMBIO CLAVE PARA LA ALINEACIÓN --- */}
-            <div className="flex justify-between items-start gap-4 mb-2">
-              <h3 className="font-bold text-white text-lg leading-tight uppercase">
-                {bonus.title}
+          {/* 2. COLUMNA DERECHA: Contenido (Flexible) */}
+          <div className="flex-1 min-w-0"> {/* min-w-0 es EL TRUCO para evitar desbordes */}
+            
+            {/* Fila Superior: Título + Precio */}
+            <div className="flex justify-between items-start gap-3 mb-2">
+              <h3 className="text-lg font-bold text-white uppercase leading-tight">
+                {item.title}
               </h3>
-              {/* shrink-0 evita que el precio se corte o se aplaste */}
-              <span className="text-primary font-bold text-lg shrink-0">
-                {bonus.value}
+              <span className="text-lg font-bold text-[#FCD34D] shrink-0">
+                {item.value}
               </span>
             </div>
-            {/* ---------------------------------------------------- */}
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        {bonus.description}
-                      </p>
-                    </div>
-                  </div>
+
+            {/* Fila Inferior: Descripción */}
+            <p className="text-gray-400 text-sm leading-relaxed">
+              {item.description}
+            </p>
+          </div>
+
+        </div>
                 </CardContent>
               </Card>
             );
