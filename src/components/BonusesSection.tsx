@@ -62,8 +62,7 @@ const BonusesSection = () => {
           </div>
 
         </div>
-                </CardContent>
-              </Card>
+
             );
           })}
         </div>
