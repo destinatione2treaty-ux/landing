@@ -121,6 +121,7 @@ export const translations = {
       questionsTitle: "¿Tienes Preguntas?",
       questionsText: "Estamos aquí para ayudarte",
       contactButton: "Ir al Formulario de Inicio", // Usaremos este botón para el form
+      formNote: "*Es indispensable para entregar en 48h",
       socialProof: "🎉 Te uniste a los emprendedores que ya venden sin fronteras"
     },
 
@@ -389,6 +390,7 @@ export const translations = {
       questionsTitle: "Have Questions?",
       questionsText: "We're here to help",
       contactButton: "Go to Start Form",
+      formNote: "*Essential for 48h delivery",
       socialProof: "🎉 You joined the entrepreneurs selling without borders"
     },
 

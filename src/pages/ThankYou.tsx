@@ -121,7 +121,7 @@ const ThankYouPage = () => {
               </a>
               
               <p className="mt-4 text-sm text-gray-500">
-                *Es indispensable para entregar en 48h
+                {t.thankYou.formNote}
               </p>
             </CardContent>
           </Card>
