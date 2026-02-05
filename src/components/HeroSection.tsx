@@ -60,11 +60,11 @@ const HeroSection = () => {
           <span className="text-white block">{t.hero.title2}</span>
           <span className="text-white block">{t.hero.title3}</span>
         </h1>
-
-        <p className="text-xl md:text-2xl text-gray-200 mb-4 max-w-3xl mx-auto leading-snug font-medium">
+        
+        <p className="text-base md:text-xl lg:text-2xl text-gray-200 mb-4 max-w-3xl mx-auto leading-snug font-medium">
           {t.hero.subtitle}
         </p>
-        <p className="text-lg text-gray-300 mb-7 max-w-2xl mx-auto font-medium">
+        <p className="text-sm md:text-base lg:text-lg text-gray-300 mb-7 max-w-2xl mx-auto font-medium">
           {t.hero.description}
         </p>
 
