@@ -83,24 +83,24 @@ export const variablesConfig = {
   hero: {
     es: {
       title: [
-        '¿SUEÑAS CON INVERTIR Y VIVIR',
-        'LEGALMENTE EN ESTADOS UNIDOS',
-        'SIN COMETER ERRORES COSTOSOS?'
+        '¿Sueñas con invertir y',
+        'vivir legalmente en',
+        'Estados Unidos?'
       ],
-      subtitle: 'Descubre la hoja de ruta clara para preparar tu Visa E-2 antes de hablar con abogados, contadores o asesores.',
-      description: 'Una guía práctica, en español, creada para personas que quieren empezar su proceso E-2 con orden, claridad y seguridad desde el día uno.',
+      subtitle: 'Descubre la hoja de ruta exacta para obtener tu Visa E-2, paso a paso y sin errores costosos.',
+      description: 'La guía definitiva para inversionistas.',
       badge1Text: 'Acceso Inmediato',
       badge2Text: 'Contenido Práctico',
       badge3Text: '7 Días de Garantía',
     },
     en: {
       title: [
-        'DREAM OF INVESTING AND LIVING',
-        'LEGALLY IN THE UNITED STATES',
-        'WITHOUT COSTLY MISTAKES?'
+        'Dream of investing and',
+        'living legally in the',
+        'United States?'
       ],
-      subtitle: 'Discover the clear roadmap to prepare your E-2 Visa before talking to lawyers, accountants or advisors.',
-      description: 'A practical guide, in Spanish, created for people who want to start their E-2 process with order, clarity and security from day one.',
+      subtitle: 'Discover the clear roadmap to prepare your E-2 Visa, step by step and without costly mistakes.',
+      description: 'The definitive guide for investors.',
       badge1Text: 'Immediate Access',
       badge2Text: 'Practical Content',
       badge3Text: '7-Day Guarantee',
