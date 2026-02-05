@@ -1,198 +1,225 @@
 // src/config/variables.config.ts
-// TODAS las variables que se solicitarán al cliente en el cuestionario
+// Configuración de contenido - Destino E-2
 
 export const variablesConfig = {
   // ===== INFORMACIÓN DEL PRODUCTO/SERVICIO =====
   product: {
-    // Nombre del producto/servicio principal
-    name: 'Landing Page Profesional',
-    namePlural: 'Landing Pages',
-    
-    // Tipo de acción (para social proof)
-    actionCompleted: 'entregadas', // ej: "vendidos", "entregados", "realizadas", "activos"
-    
-    // Tipo de cliente/usuario
-    clientType: 'emprendedores', // ej: "estudiantes", "clientes", "empresas", "miembros"
+    name: 'Guía Destino E-2',
+    namePlural: 'Guías Destino E-2',
+    actionCompleted: 'vendidas', // "28 guías vendidas"
+    clientType: 'inversionistas', // "nuestros inversionistas"
   },
 
   // ===== PRECIOS =====
   pricing: {
-    originalPrice: '$240',
-    currentPrice: '$49.99',
-    normalValue: '$537',
-    bonusValue: '$477',
-    priceAfterLimit: '$97',
+    originalPrice: '$47',
+    currentPrice: '$27',
+    normalValue: '$144', // Valor del paquete según su contenido
+    bonusValue: '$117', // Calculado: $144 - $27
+    priceAfterLimit: '$47', // Precio después de la oferta
     currency: 'USD',
   },
 
   // ===== TIEMPOS Y MÉTRICAS =====
   metrics: {
-    deliveryTime: '48',              // Tiempo de entrega
-    deliveryUnit: 'horas',           // Unidad: "horas", "días", "semanas"
-    guaranteeDays: '7',              // Días de garantía
-    supportDays: '30',               // Días de soporte
-    totalDelivered: '50',            // Total de productos entregados/vendidos
-    limitedSpots: '10',              // Espacios limitados
-    spotsOccupied: '7',              // Espacios ocupados
+    deliveryTime: 'Inmediato', // Producto digital
+    deliveryUnit: 'acceso', // "Acceso inmediato"
+    guaranteeDays: '7',
+    supportDays: '0', // No menciona soporte
+    totalDelivered: '28', // Guías vendidas
+    limitedSpots: '0', // No aplica para productos digitales
+    spotsOccupied: '0',
   },
 
-  // ===== ITEMS DEL PAQUETE PRINCIPAL (5 items) =====
+  // ===== ITEMS DEL PAQUETE PRINCIPAL =====
   packageItems: {
     item1: {
-      name: 'Landing Page Profesional de Alta Conversión',
-      value: '$240',
+      name: 'Guía Principal: Destino E-2',
+      value: '$97',
     },
     item2: {
-      name: 'Guía de Copywriting en PDF',
-      value: '$97',
+      name: 'Qué es la Visa E-2 y cómo funciona',
+      value: '$0', // Incluido
     },
     item3: {
-      name: 'Paleta de Colores Personalizada',
-      value: '$67',
+      name: 'Tipos de inversión aceptados',
+      value: '$0', // Incluido
     },
     item4: {
-      name: 'Instalación en tu Dominio',
-      value: '$97',
+      name: 'Proceso paso a paso completo',
+      value: '$0', // Incluido
     },
     item5: {
-      name: 'Soporte por Email', // Sin el número de días aquí
-      value: '$36',
+      name: 'Checklist del Proceso E-2',
+      value: '$47', // Bono incluido
     },
   },
 
-  // ===== BONOS ADICIONALES (4 bonos) =====
+  // ===== BONOS ADICIONALES =====
   bonuses: {
     bonus1: {
-      name: "Sistema de 'Smart Checkout' Geolocalizado",
-      description: 'Tecnología inteligente que adapta la pasarela de pago según el país del visitante (Hotmart para Latam, Stripe/PayPal para el resto del mundo) para maximizar tus ventas.',
-      value: '$197',
+      name: 'Checklist del Proceso E-2',
+      description: 'Un checklist práctico para evaluar si estás listo para comenzar, detectar vacíos en tu plan y organizarte antes de invertir dinero.',
+      value: '$47',
     },
     bonus2: {
-      name: 'Hosting Global de Alta Velocidad',
-      description: 'Alojamiento en redes CDN de última generación con detección automática de idioma. Tu página volará y se adaptará al usuario, sin importar dónde esté.',
-      value: '$147',
+      name: 'Checklist Premium: Franquicia o Negocio Existente',
+      description: 'Guía completa para decidir qué elegir y qué evaluar al seleccionar entre franquicia o negocio existente.',
+      value: '$37', // Order bump
     },
     bonus3: {
-      name: 'Setup Completo de Dominio y Hosting',
-      description: 'Te ayudamos a configurar tu dominio y hosting para que tu landing esté en línea. Soporte paso a paso incluido.',
-      value: '$97',
+      name: 'Plantilla Profesional del Plan de Negocios E-2',
+      description: 'Entiende qué espera ver inmigración y cómo estructurar tu idea correctamente.',
+      value: '$47', // Order bump
     },
     bonus4: {
-      name: 'Soporte por Email', // Sin el número de días aquí
-      description: 'Cualquier duda, ajuste menor o consulta técnica. Estamos aquí para asegurar tu éxito durante el primer mes.',
-      value: '$36',
+      name: 'Actualizaciones gratuitas',
+      description: 'Recibe actualizaciones de la guía sin costo adicional cuando haya cambios en el proceso.',
+      value: '$0',
     },
   },
 
-  // ===== TEXTOS HERO SECTION =====
+  // ===== HERO SECTION =====
   hero: {
     es: {
-      title: ['TU LANDING PAGE', 'PROFESIONAL', 'LISTA EN 48 HORAS'],
-      subtitle: 'Convierte visitantes en clientes con una landing page diseñada para vender.',
-      description: 'Sin complicaciones técnicas. Sin código. Sin estrés.',
-      badge1Text: 'Entrega Garantizada',
-      badge2Text: 'Responsive Design',
-      badge3Text: 'Garantía de Devolución',
+      title: [
+        '¿SUEÑAS CON INVERTIR Y VIVIR',
+        'LEGALMENTE EN ESTADOS UNIDOS',
+        'SIN COMETER ERRORES COSTOSOS?'
+      ],
+      subtitle: 'Descubre la hoja de ruta clara para preparar tu Visa E-2 antes de hablar con abogados, contadores o asesores.',
+      description: 'Una guía práctica, en español, creada para personas que quieren empezar su proceso E-2 con orden, claridad y seguridad desde el día uno.',
+      badge1Text: 'Acceso Inmediato',
+      badge2Text: 'Contenido Práctico',
+      badge3Text: '7 Días de Garantía',
     },
     en: {
-      title: ['YOUR PROFESSIONAL', 'SALES PAGE', 'READY IN 48 HOURS'],
-      subtitle: 'Turn visitors into customers with a sales page designed to sell.',
-      description: 'No technical complications. No code. No stress.',
-      badge1Text: 'Guaranteed Delivery',
-      badge2Text: 'Responsive Design',
-      badge3Text: 'Money-Back Guarantee',
+      title: [
+        'DREAM OF INVESTING AND LIVING',
+        'LEGALLY IN THE UNITED STATES',
+        'WITHOUT COSTLY MISTAKES?'
+      ],
+      subtitle: 'Discover the clear roadmap to prepare your E-2 Visa before talking to lawyers, accountants or advisors.',
+      description: 'A practical guide, in Spanish, created for people who want to start their E-2 process with order, clarity and security from day one.',
+      badge1Text: 'Immediate Access',
+      badge2Text: 'Practical Content',
+      badge3Text: '7-Day Guarantee',
     },
   },
 
   // ===== BENEFICIOS (3 beneficios) =====
   benefits: {
     es: {
-      title: 'LA TRANSFORMACIÓN PARA TU NEGOCIO',
-      subtitle: 'No es solo una landing page, es tu nuevo canal de ventas 24/7',
+      title: 'NO ES SOLO UNA GUÍA',
+      subtitle: 'Es tu primer paso estratégico hacia Estados Unidos',
       benefit1: {
-        title: 'LANZA EN TIEMPO RÉCORD',
-        description: 'Olvídate de semanas de desarrollo. Tu landing page estará lista en solo 48 horas, optimizada y funcionando.',
-        highlight: 'de entrega',
+        title: 'EVITA ERRORES COSTOSOS DESDE EL INICIO',
+        description: 'Comprende qué califica realmente para la Visa E-2 y qué no, antes de invertir dinero o tiempo. Ahorra miles de dólares en correcciones.',
+        highlight: 'Ahorra tiempo y dinero',
       },
       benefit2: {
-        title: 'CONVIERTE VISITANTES EN CLIENTES',
-        description: 'Diseño probado para maximizar conversiones. Cada elemento está pensado para guiar a tus visitantes hacia la acción.',
-        highlight: 'Optimizada para vender',
+        title: 'AHORRA MESES DE CONFUSIÓN',
+        description: 'Deja atrás información contradictoria y entiende el proceso con una estructura clara y lógica. Todo en un solo lugar.',
+        highlight: 'Claridad total',
       },
       benefit3: {
-        title: 'PROYECTA MÁXIMA CONFIANZA',
-        description: 'Con diseño profesional y estructura clara, transmites credibilidad desde el primer segundo.',
-        highlight: 'Diseño profesional',
+        title: 'TOMA DECISIONES CON SEGURIDAD',
+        description: 'Llega preparado a conversaciones con abogados, contadores o asesores de negocio. Haz las preguntas correctas desde el inicio.',
+        highlight: 'Toma el control',
       },
     },
     en: {
-      title: 'THE TRANSFORMATION FOR YOUR BUSINESS',
-      subtitle: "It's not just a sales page, it's your new 24/7 sales channel",
+      title: "IT'S NOT JUST A GUIDE",
+      subtitle: "It's your first strategic step towards the United States",
       benefit1: {
-        title: 'LAUNCH IN RECORD TIME',
-        description: 'Forget weeks of development. Your sales page will be ready in just 48 hours, optimized and working.',
-        highlight: 'delivery',
+        title: 'AVOID COSTLY MISTAKES FROM THE START',
+        description: 'Understand what truly qualifies for the E-2 Visa and what doesn\'t, before investing money or time. Save thousands in corrections.',
+        highlight: 'Save time and money',
       },
       benefit2: {
-        title: 'CONVERT VISITORS INTO CUSTOMERS',
-        description: 'Proven design to maximize conversions. Every element is designed to guide your visitors toward action.',
-        highlight: 'Optimized to sell',
+        title: 'SAVE MONTHS OF CONFUSION',
+        description: 'Leave behind contradictory information and understand the process with a clear and logical structure. Everything in one place.',
+        highlight: 'Total clarity',
       },
       benefit3: {
-        title: 'PROJECT MAXIMUM TRUST',
-        description: 'With professional design and clear structure, you convey credibility from the first second.',
-        highlight: 'Professional design',
+        title: 'MAKE DECISIONS WITH CONFIDENCE',
+        description: 'Come prepared to conversations with lawyers, accountants or business advisors. Ask the right questions from the start.',
+        highlight: 'Take control',
       },
     },
   },
 
-  // ===== TESTIMONIOS (3 testimonios) =====
+  // ===== TESTIMONIOS (2 testimonios + 1 placeholder) =====
   testimonials: {
     es: [
       {
-        name: 'Carmen Cecilia',
-        business: 'People Sin Límites',
-        role: 'Coach & Tarot',
-        text: 'La landing page superó mis expectativas. El diseño es hermoso y profesional, y lo mejor es que empecé a recibir consultas desde el primer día.',
+        name: 'Joan P.',
+        business: 'Futuro Inversionista E-2',
+        role: 'Emprendedor',
+        text: 'Me ayudó a tener claridad sobre el proceso. Ahora sé qué debo hacer antes de hablar con abogados y puedo tomar decisiones con más seguridad.',
       },
       {
-        name: 'Ernesto Márquez',
-        business: 'Proyecto Lumen',
-        role: 'Transformación Masculina',
-        text: 'Como desarrollador, aprecio la calidad del código y el diseño. Mi landing quedó perfecta y mis clientes potenciales me dicen que se ve muy profesional.',
+        name: 'Maria G.',
+        business: 'Proceso E-2 en curso',
+        role: 'Inversionista',
+        text: 'Excelente guía para empezar. Evité cometer errores comunes gracias a la información clara y estructurada. La recomiendo totalmente.',
       },
       {
-        name: 'Alejandro Suárez',
-        business: 'Disuaferca',
-        role: 'Importación & Exportación',
-        text: 'Necesitaba una presencia web rápida. En 48 horas tenía mi landing funcionando. La inversión se pagó sola con los primeros clientes.',
+        name: 'Carlos M.',
+        business: 'Inversor Internacional',
+        role: 'Empresario',
+        text: 'La mejor inversión que pude hacer antes de empezar mi proceso E-2. Me ahorró meses de investigación y me dio un plan claro.',
       },
     ],
     en: [
       {
-        name: 'Carmen Cecilia',
-        business: 'People Sin Límites',
-        role: 'Coach & Tarot',
-        text: 'The sales page exceeded my expectations. The design is beautiful and professional, and I started receiving inquiries from day one.',
+        name: 'Joan P.',
+        business: 'Future E-2 Investor',
+        role: 'Entrepreneur',
+        text: 'It helped me gain clarity about the process. Now I know what I need to do before talking to lawyers and I can make decisions with more confidence.',
       },
       {
-        name: 'Ernesto Márquez',
-        business: 'Proyecto Lumen',
-        role: 'Male Transformation',
-        text: 'As a developer, I appreciate the code quality and design. My landing turned out perfect and my clients tell me it looks very professional.',
+        name: 'Maria G.',
+        business: 'E-2 Process in Progress',
+        role: 'Investor',
+        text: 'Excellent guide to start. I avoided making common mistakes thanks to the clear and structured information. I totally recommend it.',
       },
       {
-        name: 'Alejandro Suárez',
-        business: 'Disuaferca',
-        role: 'Import & Export',
-        text: 'I needed a quick web presence. In 48 hours I had my landing working. The investment paid for itself with the first clients.',
+        name: 'Carlos M.',
+        business: 'International Investor',
+        role: 'Businessman',
+        text: 'The best investment I could make before starting my E-2 process. It saved me months of research and gave me a clear plan.',
       },
     ],
   },
 
-  // ===== FAQs (puedes agregar/quitar según necesites) =====
-  // Los FAQs se quedarán en translations.ts porque son muy específicos
-  // y varían mucho por tipo de negocio
+  // ===== TEXTOS ADICIONALES =====
+  additionalContent: {
+    es: {
+      urgencyBar: '¡Oferta de Lanzamiento! Últimos días con el precio especial de $27',
+      painPoint: 'El mayor error no es que te nieguen la visa. El mayor error es empezar sin información clara y corregir sobre la marcha.',
+      trustBadges: [
+        'Contenido claro y estructurado',
+        'Ideal para quienes aún no han comenzado',
+        'Diseñada para evitar errores comunes',
+        'Útil incluso antes de contratar profesionales',
+      ],
+      ctaMicrocopy: 'Acceso inmediato • Pago único • Guía educativa • Sin riesgo',
+      disclaimer: 'Este producto no garantiza la aprobación de una visa. "Destino E-2" es una guía informativa y educativa. No constituye asesoría legal o migratoria personalizada.',
+    },
+    en: {
+      urgencyBar: 'Launch Offer! Last days with the special price of $27',
+      painPoint: 'The biggest mistake is not having your visa denied. The biggest mistake is starting without clear information and correcting as you go.',
+      trustBadges: [
+        'Clear and structured content',
+        'Ideal for those who haven\'t started yet',
+        'Designed to avoid common mistakes',
+        'Useful even before hiring professionals',
+      ],
+      ctaMicrocopy: 'Immediate access • One-time payment • Educational guide • Risk-free',
+      disclaimer: 'This product does not guarantee visa approval. "Destino E-2" is an informative and educational guide. It does not constitute personalized legal or immigration advice.',
+    },
+  },
 };
 
 export default variablesConfig;

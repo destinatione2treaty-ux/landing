@@ -1,40 +1,40 @@
 // src/config/integrations.config.ts
-// Configuración de integraciones y servicios externos
+// Configuración de integraciones - Destino E-2
 
 export const integrationsConfig = {
   // Hotmart
   hotmart: {
-    // URL del checkout (botón directo a Hotmart)
-    checkoutUrl: 'https://pay.hotmart.com/XXXXXXXXXX?checkoutMode=10',
+    // URL del checkout (CAMBIAR CUANDO LA TENGAS)
+    checkoutUrl: 'https://pay.hotmart.com/PENDIENTE_URL_AQUI',
     
     // Código de producto para checkout embebido
-    productCode: 'CODIGO_PRODUCTO_AQUI',
+    productCode: 'PENDIENTE_CODIGO',
     
-    // Modo por defecto: 'embedded' (en la misma página) o 'hotmart' (redirige a Hotmart)
+    // Modo por defecto: 'hotmart' = botón directo (recomendado)
     defaultMode: 'hotmart' as 'embedded' | 'hotmart',
   },
 
-  // Meta Pixel (Facebook Pixel)
+  // Meta Pixel (Facebook Pixel) - Desactivado por ahora
   metaPixel: {
-    enabled: false, // Cambiar a true para activar
-    pixelId: '', // ID del pixel de Meta/Facebook
+    enabled: false,
+    pixelId: '',
   },
 
-  // Google Analytics
+  // Google Analytics - Desactivado por ahora
   googleAnalytics: {
     enabled: false,
-    measurementId: '', // ID de medición GA4 (ejemplo: G-XXXXXXXXXX)
+    measurementId: '',
   },
 
-  // Google Tag Manager (opcional)
+  // Google Tag Manager - Desactivado por ahora
   googleTagManager: {
     enabled: false,
-    containerId: '', // ID del contenedor GTM (ejemplo: GTM-XXXXXXX)
+    containerId: '',
   },
 
-  // Email marketing (opcional)
+  // Email marketing - No usa por ahora
   emailMarketing: {
-    provider: '', // 'mailchimp', 'activecampaign', 'convertkit', etc.
+    provider: '',
     apiKey: '',
     listId: '',
   },

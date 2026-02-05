@@ -1,17 +1,23 @@
 // src/config/brand.config.ts
-// Configuración de marca e identidad
+// Configuración de marca - Destino E-2
 
 export const brandConfig = {
   // Información básica de la marca
-  name: 'ZenithWebCraft',
-  tagline: 'Tu Landing Page Profesional en 48 Horas',
+  name: 'Destino E-2',
+  tagline: 'Tu hoja de ruta para la Visa E-2',
   
-  // Logo (puedes usar ruta de archivo o URL)
+  // Logo (por ahora sin logo, solo texto)
   logo: {
-    path: '/logo.png', // Ruta del logo en /public
-    alt: 'ZenithWebCraft Logo',
+    path: '', // Sin logo por ahora
+    alt: 'Destino E-2',
     width: 180,
     height: 40,
+  },
+
+  // Hero background image
+  heroBackground: {
+    path: '/hero-background.jpg', // o .png
+    alt: 'Mapa de Estados Unidos',
   },
 
   // Favicon
@@ -19,13 +25,13 @@ export const brandConfig = {
 
   // URLs y enlaces
   urls: {
-    website: 'https://zenithwebcraft.com',
-    landing: 'https://landing.zenithwebcraft.com',
-    contactForm: 'https://forms.gle/tu-formulario-aqui', // Formulario de Google Forms o similar
-    whatsapp: 'https://wa.me/1234567890', // Opcional
+    website: 'https://yournewfutureusa.com',
+    landing: 'https://destino-e2.yournewfutureusa.com', // Subdomain
+    contactForm: 'https://forms.gle/tu-formulario-aqui', // Cambiar después
+    whatsapp: '', // No tiene por ahora
   },
 
-  // Redes sociales
+  // Redes sociales (vacías por ahora)
   social: {
     facebook: '',
     instagram: '',
@@ -36,17 +42,17 @@ export const brandConfig = {
 
   // Metadatos SEO
   seo: {
-    title: 'Landing Page Profesional en 48 Horas | ZenithWebCraft',
-    description: 'Convierte visitantes en clientes con una landing page diseñada para vender. Sin código, sin complicaciones. Lista en 48 horas.',
-    keywords: 'landing page, diseño web, página de ventas, conversión, marketing digital',
-    ogImage: '/og-image-landing.jpg', // Imagen para compartir en redes
+    title: 'Destino E-2 - Guía Completa para tu Visa E-2 | $27',
+    description: 'Descubre la hoja de ruta clara para preparar tu Visa E-2 antes de hablar con abogados. Guía práctica en español desde $27. Acceso inmediato.',
+    keywords: 'visa e-2, invertir en estados unidos, vivir en usa, guía visa e-2, inmigración usa, visa inversionista',
+    ogImage: '/og-image-destino-e2.jpg',
   },
 
   // Información de contacto
   contact: {
-    email: 'hola@zenithwebcraft.com',
-    phone: '+1 (407) 123-4567',
-    location: 'Orlando, FL, USA',
+    email: 'destination.e2treaty@gmail.com',
+    phone: '',
+    location: 'Estados Unidos',
   },
 };
 

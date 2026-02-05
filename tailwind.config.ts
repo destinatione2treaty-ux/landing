@@ -26,8 +26,8 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: themeConfig.colors.primary.DEFAULT, // Usando config
-          foreground: themeConfig.colors.primary.foreground, // Usando config
+          DEFAULT: themeConfig.colors.primary.DEFAULT, // #E84855 - Rojo
+          foreground: themeConfig.colors.primary.foreground,
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -53,6 +53,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      fontFamily: {
+        sans: ['Lato', 'sans-serif'],
+        headline: ['Montserrat', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
