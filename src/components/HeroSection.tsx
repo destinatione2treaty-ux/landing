@@ -55,7 +55,7 @@ const HeroSection = () => {
         </div>
 
         {/* Título - MÁS GRANDE y SIN ROJO en tercera línea */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-[0.9] font-headline tracking-tight">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-[0.9] font-headline tracking-tight">
           <span className="text-white block">{t.hero.title1}</span>
           <span className="text-white block">{t.hero.title2}</span>
           <span className="text-white block">{t.hero.title3}</span>
