@@ -5,10 +5,10 @@ export const integrationsConfig = {
   // Hotmart
   hotmart: {
     // URL del checkout (CAMBIAR CUANDO LA TENGAS)
-    checkoutUrl: 'https://pay.hotmart.com/PENDIENTE_URL_AQUI',
+    checkoutUrl: 'https://pay.hotmart.com/C100720841G',
     
     // Código de producto para checkout embebido
-    productCode: 'PENDIENTE_CODIGO',
+    productCode: 'dr28lsor',
     
     // Modo por defecto: 'hotmart' = botón directo (recomendado)
     defaultMode: 'hotmart' as 'embedded' | 'hotmart',
@@ -23,7 +23,7 @@ export const integrationsConfig = {
   // Google Analytics - Desactivado por ahora
   googleAnalytics: {
     enabled: false,
-    measurementId: '',
+    measurementId: 'G-54E018RR76',
   },
 
   // Google Tag Manager - Desactivado por ahora
