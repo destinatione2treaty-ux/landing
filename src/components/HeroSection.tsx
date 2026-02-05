@@ -35,14 +35,14 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#1E2F47]">
       {/* Imagen de fondo del mapa */}
-      <div 
-        className="absolute inset-0 bg-no-repeat opacity-30"
-        style={{
-          backgroundImage: `url('${brandConfig.heroBackground?.path || '/hero-background.jpg'}')`,
-          backgroundSize: '110%',
-          backgroundPosition: 'center 45%',
-        }}
-      ></div>
+    <div 
+      className="absolute inset-0 bg-no-repeat opacity-30"
+      style={{
+        backgroundImage: `url('${brandConfig.heroBackground?.path || '/hero-background.jpg'}')`,
+        backgroundSize: window.innerWidth < 768 ? '140%' : '110%',
+        backgroundPosition: window.innerWidth < 768 ? 'center 30%' : 'center 45%',
+      }}
+    ></div>
       
       {/* Overlay gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#1E2F47]/75 via-[#1E2F47]/60 to-[#1E2F47]/75"></div>
@@ -60,7 +60,7 @@ const HeroSection = () => {
           <span className="text-white block">{t.hero.title2}</span>
           <span className="text-white block">{t.hero.title3}</span>
         </h1>
-        
+
         <p className="text-base md:text-xl lg:text-2xl text-gray-200 mb-4 max-w-3xl mx-auto leading-snug font-medium">
           {t.hero.subtitle}
         </p>
@@ -125,5 +125,6 @@ const HeroSection = () => {
     </section>
   );
 };
+
 
 export default HeroSection;
