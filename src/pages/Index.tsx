@@ -9,6 +9,7 @@ import FAQSection from "@/components/FAQSection";
 import CheckoutSection from '@/components/CheckoutSection';
 import Footer from "@/components/Footer";
 import { integrationsConfig } from "@/config/integrations.config";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 type CheckoutMode = 'embedded' | 'hotmart';
 
@@ -18,6 +19,7 @@ const Index = () => {
   
   return (
     <div className="min-h-screen bg-background">
+      <GoogleAnalytics /> 
       <AnnouncementBar />
       <div className="pt-10">
         <HeroSection />
