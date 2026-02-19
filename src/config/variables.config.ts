@@ -13,7 +13,7 @@ export const variablesConfig = {
 
   // ===== PRECIOS =====
   pricing: {
-    originalPrice: '$47',
+    originalPrice: '$127',
     currentPrice: '$27',
     normalValue: '$127',
     bonusValue: '$100',
