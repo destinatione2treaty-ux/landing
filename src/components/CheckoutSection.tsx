@@ -30,7 +30,8 @@ const CheckoutSection = ({ defaultMode = 'embedded' }: CheckoutSectionProps) => 
               {t.checkout.complementosTitle}
             </p>
             <div className="complementos-grid">
-              {t.checkout.complementos.map((item, index) => (
+              {/* ✅ NUEVO (seguro aunque falte en algún idioma) */}
+              {t.checkout.complementos?.map((item, index) => (
                 <div key={index} className="complemento-card">
                   <div className="complemento-header">
                     <h4 className="complemento-name">{item.title}</h4>
