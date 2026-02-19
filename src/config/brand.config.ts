@@ -54,6 +54,9 @@ export const brandConfig = {
     phone: '',
     location: 'Estados Unidos',
   },
+
+  guarantee: '7', // días de garantía
+
 };
 
 export default brandConfig;
