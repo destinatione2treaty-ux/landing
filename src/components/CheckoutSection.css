@@ -142,8 +142,8 @@
 .complementos-section {
   margin: 1.75rem 0;
   padding: 1.25rem 1.25rem 1rem;
-  background-color: rgba(242, 163, 7, 0.05);
-  border: 1.5px dashed rgba(242, 163, 7, 0.5);
+  background-color: rgba(242, 163, 7, 0.06);
+  border: 1.5px dashed rgba(242, 163, 7, 0.6);
   border-radius: 0.75rem;
 }
 
@@ -153,11 +153,11 @@
   text-transform: uppercase;
   letter-spacing: 0.04em;
   text-align: center;
-  color: #F2A307;
+  color: #B8700A;                              /* ← Dorado oscuro, legible en crema */
   margin-bottom: 1.1rem;
   line-height: 1.5;
   padding-bottom: 0.85rem;
-  border-bottom: 1px solid rgba(242, 163, 7, 0.2);
+  border-bottom: 1px solid rgba(242, 163, 7, 0.3);
 }
 
 .complementos-grid {
@@ -167,16 +167,16 @@
 }
 
 .complemento-card {
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-left: 3px solid #F2A307;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-left: 3px solid #F2A307;              /* ← Acento dorado */
   border-radius: 0.5rem;
   padding: 0.85rem 1rem;
   transition: background-color 0.2s ease;
 }
 
 .complemento-card:hover {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.85);
 }
 
 .complemento-header {
@@ -193,13 +193,13 @@
   text-align: left;
   flex: 1;
   line-height: 1.35;
-  color: #FFFFFF;
+  color: #1E2F47;                              /* ← Azul oscuro del brand */
 }
 
 .complemento-price {
   font-size: 1rem;
   font-weight: 900;
-  color: #F2A307;
+  color: #B8700A;                              /* ← Dorado oscuro */
   white-space: nowrap;
   line-height: 1.2;
 }
@@ -207,8 +207,8 @@
 .complemento-description {
   font-size: 0.76rem;
   text-align: left;
-  opacity: 0.65;
+  color: #3D4F63;                              /* ← Gris azulado, suave pero legible */
   line-height: 1.55;
   margin: 0;
-  color: #FFFFFF;
 }
+
