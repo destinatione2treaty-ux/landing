@@ -9,7 +9,7 @@ const ThankYouPage = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    trackPurchase(49.99);
+    trackPurchase(27);
   }, []);
 
   return (

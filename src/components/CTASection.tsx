@@ -61,11 +61,11 @@ const CTASection = () => {
             <div className="border-t-2 border-gray-700 mt-6 pt-6">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-white text-xl font-bold">{t.cta.normalValue}</span>
-                <span className="text-gray-400 text-2xl line-through">$537.00</span>
+                <span className="text-gray-400 text-2xl line-through">$127.00</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-white text-2xl font-bold">{t.cta.specialPrice}</span>
-                <span className="text-primary text-4xl font-bold">$49.99</span>
+                <span className="text-primary text-4xl font-bold">$27</span>
               </div>
             </div>
           </div>

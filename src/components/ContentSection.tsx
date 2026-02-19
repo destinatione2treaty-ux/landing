@@ -75,11 +75,11 @@ const ContentSection = () => {
           <Card className="bg-gray-800 border-2 border-primary">
             <CardContent className="p-8 text-center">
               <p className="text-gray-300 text-lg mb-2">{t.content.packageValue}</p>
-              <p className="text-gray-400 text-3xl line-through mb-2">$537</p>
+              <p className="text-gray-400 text-3xl line-through mb-2">$127</p>
               
               <div className="my-6">
                 <p className="text-white text-2xl font-bold mb-2">{t.content.specialPrice}</p>
-                <p className="text-6xl font-bold text-primary mb-2">$49.99</p>
+                <p className="text-6xl font-bold text-primary mb-2">$27</p>
                 <p className="text-sm text-gray-400">{t.content.paymentNote}</p>
               </div>
 
