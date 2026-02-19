@@ -298,13 +298,13 @@ export const translations = {
       title2: `"${product.name.toUpperCase()}"?`,
       title3: "",
       subtitle: "All the content you need to start your E-2 process with clarity",
-      items: [
-        { text: packageItems.item1.name, value: packageItems.item1.value },
-        { text: bonuses.bonus1.name, value: bonuses.bonus1.value },
-        { text: bonuses.bonus2.name, value: bonuses.bonus2.value },
-        { text: 'Immediate access', value: 'Included' },
-        { text: 'Free updates', value: 'Included' },
-        { text: 'Downloadable PDF format', value: 'Included' },
+      features: [
+        `${packageItems.item1.name} - Value: ${packageItems.item1.value}`,
+        `${bonuses.bonus1.name} - Value: ${bonuses.bonus1.value}`,
+        `${bonuses.bonus2.name} - Value: ${bonuses.bonus2.value}`,
+        `Immediate access to complete content`,
+        `Downloadable PDF format`,
+        `Free updates`,
       ],
 
       additionalFeatures: [
