@@ -2,32 +2,33 @@
 // Configuración de contenido - Destino E-2
 
 export const variablesConfig = {
+
   // ===== INFORMACIÓN DEL PRODUCTO/SERVICIO =====
   product: {
     name: 'Guía Destino E-2',
     namePlural: 'Guías Destino E-2',
-    actionCompleted: 'vendidas', // "28 guías vendidas"
-    clientType: 'inversionistas', // "nuestros inversionistas"
+    actionCompleted: 'vendidas',
+    clientType: 'inversionistas',
   },
 
   // ===== PRECIOS =====
   pricing: {
     originalPrice: '$47',
     currentPrice: '$27',
-    normalValue: '$144', // Valor del paquete según su contenido
-    bonusValue: '$117', // Calculado: $144 - $27
-    priceAfterLimit: '$47', // Precio después de la oferta
+    normalValue: '$127',       // ← CAMBIO: era $144
+    bonusValue: '$100',
+    priceAfterLimit: '$127',   // ← CAMBIO: era $47
     currency: 'USD',
   },
 
   // ===== TIEMPOS Y MÉTRICAS =====
   metrics: {
-    deliveryTime: 'Inmediato', // Producto digital
-    deliveryUnit: 'acceso', // "Acceso inmediato"
+    deliveryTime: 'Inmediato',
+    deliveryUnit: 'acceso',
     guaranteeDays: '7',
-    supportDays: '0', // No menciona soporte
-    totalDelivered: '28', // Guías vendidas
-    limitedSpots: '0', // No aplica para productos digitales
+    supportDays: '0',
+    totalDelivered: '28',
+    limitedSpots: '0',
     spotsOccupied: '0',
   },
 
@@ -39,38 +40,38 @@ export const variablesConfig = {
     },
     item2: {
       name: 'Qué es la Visa E-2 y cómo funciona',
-      value: '$0', // Incluido
+      value: '$0',
     },
     item3: {
       name: 'Tipos de inversión aceptados',
-      value: '$0', // Incluido
+      value: '$0',
     },
     item4: {
       name: 'Proceso paso a paso completo',
-      value: '$0', // Incluido
+      value: '$0',
     },
     item5: {
-      name: 'Checklist del Proceso E-2',
-      value: '$47', // Bono incluido
+      name: 'Bono 1: Checklist Paso a Paso del Proceso E-2',  // ← CAMBIO
+      value: '$15',                                            // ← CAMBIO: era $47
     },
   },
 
   // ===== BONOS ADICIONALES =====
   bonuses: {
     bonus1: {
-      name: 'Checklist del Proceso E-2',
+      name: 'Bono 1: Checklist Paso a Paso del Proceso E-2',  // ← CAMBIO
       description: 'Un checklist práctico para evaluar si estás listo para comenzar, detectar vacíos en tu plan y organizarte antes de invertir dinero.',
-      value: '$47',
+      value: '$15',  // ← CAMBIO: era $47
     },
     bonus2: {
-      name: 'Checklist Premium: Franquicia o Negocio Existente',
-      description: 'Guía completa para decidir qué elegir y qué evaluar al seleccionar entre franquicia o negocio existente.',
-      value: '$37', // Order bump
+      name: 'Bono 2: Checklist Paso a paso para desarrollar el Plan de Negocios E-2',  // ← CAMBIO
+      description: 'Un checklist práctico que te permite ir etapa por etapa hasta tener un plan de negocios sólido para tu empresa y tu petición de visa E-2.',  // ← CAMBIO
+      value: '$15',  // ← CAMBIO: era $37
     },
     bonus3: {
       name: 'Plantilla Profesional del Plan de Negocios E-2',
       description: 'Entiende qué espera ver inmigración y cómo estructurar tu idea correctamente.',
-      value: '$47', // Order bump
+      value: '$47',
     },
     bonus4: {
       name: 'Actualizaciones gratuitas',
@@ -107,7 +108,7 @@ export const variablesConfig = {
     },
   },
 
-  // ===== BENEFICIOS (3 beneficios) =====
+  // ===== BENEFICIOS =====
   benefits: {
     es: {
       title: 'NO ES SOLO UNA GUÍA',
@@ -133,7 +134,7 @@ export const variablesConfig = {
       subtitle: "It's your first strategic step towards the United States",
       benefit1: {
         title: 'AVOID COSTLY MISTAKES FROM THE START',
-        description: 'Understand what truly qualifies for the E-2 Visa and what doesn\'t, before investing money or time. Save thousands in corrections.',
+        description: "Understand what truly qualifies for the E-2 Visa and what doesn't, before investing money or time. Save thousands in corrections.",
         highlight: 'Save time and money',
       },
       benefit2: {
@@ -143,13 +144,13 @@ export const variablesConfig = {
       },
       benefit3: {
         title: 'MAKE DECISIONS WITH CONFIDENCE',
-        description: 'Come prepared to conversations with lawyers, accountants or business advisors. Ask the right questions from the start.',
+        description: "Come prepared to conversations with lawyers, accountants or business advisors. Ask the right questions from the start.",
         highlight: 'Take control',
       },
     },
   },
 
-  // ===== TESTIMONIOS (2 testimonios + 1 placeholder) =====
+  // ===== TESTIMONIOS =====
   testimonials: {
     es: [
       {
@@ -209,17 +210,18 @@ export const variablesConfig = {
     },
     en: {
       urgencyBar: 'Launch Offer! Last days with the special price of $27',
-      painPoint: 'The biggest mistake is not having your visa denied. The biggest mistake is starting without clear information and correcting as you go.',
+      painPoint: "The biggest mistake is not having your visa denied. The biggest mistake is starting without clear information and correcting as you go.",
       trustBadges: [
         'Clear and structured content',
-        'Ideal for those who haven\'t started yet',
+        "Ideal for those who haven't started yet",
         'Designed to avoid common mistakes',
         'Useful even before hiring professionals',
       ],
       ctaMicrocopy: 'Immediate access • One-time payment • Educational guide • Risk-free',
-      disclaimer: 'This product does not guarantee visa approval. "Destino E-2" is an informative and educational guide. It does not constitute personalized legal or immigration advice.',
+      disclaimer: '"Destino E-2" is an informative and educational guide. It does not constitute personalized legal or immigration advice.',
     },
   },
+
 };
 
 export default variablesConfig;

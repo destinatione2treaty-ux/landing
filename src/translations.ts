@@ -54,19 +54,20 @@ export const translations = {
       subtitle: "Todo el contenido que necesitas para empezar tu proceso E-2 con claridad",
       features: [
         `${packageItems.item1.name} - Valor: ${packageItems.item1.value}`,
-        `Checklist del Proceso E-2 - Valor: ${packageItems.item5.value}`,
+        `${bonuses.bonus1.name} - Valor: ${bonuses.bonus1.value}`,
+        `${bonuses.bonus2.name} - Valor: ${bonuses.bonus2.value}`,
         `Acceso inmediato al contenido completo`,
         `Formato PDF descargable`,
         `Actualizaciones gratuitas`,
       ],
       additionalFeatures: [
-        'Qué es realmente la Visa E-2 y cómo funciona',
-        'Quién puede aplicar y quién no',
+        '¿Qué es realmente la Visa E-2 y cómo funciona?',
+        '¿Quién puede aplicar y quién no?',
         'Tipos de inversión aceptados',
         'Franquicia vs negocio existente',
         'Requisitos clave del negocio',
         'Proceso paso a paso completo',
-        'Cómo mantener tu estatus activo',
+        '¿Cómo mantener tu estatus activo?',
         'Errores comunes que debes evitar',
       ],
       packageValue: "Valor Total del Paquete:",
@@ -84,11 +85,13 @@ export const translations = {
       headline2: "ESTADOS UNIDOS HOY MISMO",
       items: [
         { text: packageItems.item1.name, value: packageItems.item1.value },
-        { text: packageItems.item5.name, value: packageItems.item5.value },
+        { text: bonuses.bonus1.name, value: bonuses.bonus1.value },
+        { text: bonuses.bonus2.name, value: bonuses.bonus2.value },
         { text: 'Acceso inmediato', value: 'Incluido' },
         { text: 'Actualizaciones gratuitas', value: 'Incluido' },
         { text: 'Formato PDF descargable', value: 'Incluido' },
       ],
+
       normalValue: "Valor Total:",
       specialPrice: "Precio Especial de Lanzamiento:",
       ctaButton: `SÍ, QUIERO ACCESO INMEDIATO POR ${pricing.currentPrice}`,
@@ -98,7 +101,7 @@ export const translations = {
       limitedSpots: "Precio especial por tiempo limitado",
       priceIncrease: `Después de la oferta, el precio sube a ${pricing.priceAfterLimit}`,
       spotsOccupied: "",
-      guarantee: `Garantía de Satisfacción de ${metrics.guaranteeDays} Días o tu Dinero de Vuelta`,
+      guarantee: `Garantía de Satisfacción de ${metrics.guaranteeDays} Días o devolvemos tu dinero.`,
     },
 
     // Checkout Section
@@ -116,7 +119,21 @@ export const translations = {
       switchTo: "¿Prefieres pagar en",
       switchToHotmart: "Hotmart",
       switchToEmbedded: "aquí",
-    },
+      complementosTitle: "En el CHECKOUT tendrás disponible estos COMPLEMENTOS que no encontrarás en otra parte.",
+      complementos: [
+        {
+          title: "Plan de Negocios en 10 pasos para la visa E-2",
+          price: "$14",
+          description: "Una guía estructurada de 42 páginas que te muestra exactamente qué debe incluir tu plan de negocios, cómo organizarlo correctamente y qué esperan ver las autoridades migratorias antes de aprobar tu visa de inversión.",
+        },
+        {
+          title: "Franquicia o Negocio Existente — ¿Qué Elegir y Qué Evaluar?",
+          price: "$8",
+          description: "Una guía práctica que te ayuda a tomar una decisión inteligente antes de invertir, evaluando riesgos, ventajas y puntos clave para que tu inversión sea sólida y alineada con la Visa E-2.",
+        },
+      ],
+      },
+
 
     // Thank You Page
     thankYou: {
@@ -182,8 +199,8 @@ export const translations = {
     // Bonuses Section
     bonuses: {
       badge: "BONO INCLUIDO",
-      title: "ADEMÁS, RECIBES ESTOS BONOS",
-      titleHighlight: "TOTALMENTE GRATIS",
+      title: "¡ADEMÁS, RECIBES ESTOS BONOS",
+      titleHighlight: "TOTALMENTE GRATIS!",
       subtitle: "Todo lo que necesitas para empezar tu proceso E-2 con el pie derecho",
       items: [
         {
@@ -191,8 +208,13 @@ export const translations = {
           description: bonuses.bonus1.description,
           value: bonuses.bonus1.value,
         },
+        {
+          title: bonuses.bonus2.name,
+          description: bonuses.bonus2.description,
+          value: bonuses.bonus2.value,
+        },
       ],
-      totalValue: "Valor del Bono:",
+      totalValue: "Valor de ambos Bonos:",
       free: "INCLUIDO GRATIS",
       investment: "Tu inversión:",
       only: `Solo ${pricing.currentPrice}`,
@@ -236,7 +258,11 @@ export const translations = {
           question: "¿Necesito saber inglés para la Visa E-2?",
           answer: "No es un requisito obligatorio hablar inglés para obtener la Visa E-2, aunque es altamente recomendable para manejar tu negocio. La guía está en español y explica todo el proceso de manera clara, incluyendo qué documentos pueden necesitar traducción.",
         },
-      ],
+        {
+          question: "¿Qué pasa si mi país está en una lista reciente con pausas o restricciones en procesos migratorios?",
+          answer: "La Visa E-2 es una visa de no inmigrante, por lo que en muchos casos este tipo de pausas no la afectan directamente. Aun así, siempre es recomendable verificar la información actualizada según tu país antes de iniciar el proceso.",
+        },
+        ],
       stillQuestions: "¿Tienes otra pregunta?",
       contact: `Contáctanos directamente a ${brandConfig.contact.email}`,
     },
@@ -272,13 +298,15 @@ export const translations = {
       title2: `"${product.name.toUpperCase()}"?`,
       title3: "",
       subtitle: "All the content you need to start your E-2 process with clarity",
-      features: [
-        `${packageItems.item1.name} - Value: ${packageItems.item1.value}`,
-        `E-2 Process Checklist - Value: ${packageItems.item5.value}`,
-        `Immediate access to complete content`,
-        `Downloadable PDF format`,
-        `Free updates`,
+      items: [
+        { text: packageItems.item1.name, value: packageItems.item1.value },
+        { text: bonuses.bonus1.name, value: bonuses.bonus1.value },
+        { text: bonuses.bonus2.name, value: bonuses.bonus2.value },
+        { text: 'Immediate access', value: 'Included' },
+        { text: 'Free updates', value: 'Included' },
+        { text: 'Downloadable PDF format', value: 'Included' },
       ],
+
       additionalFeatures: [
         'What the E-2 Visa really is and how it works',
         'Who can apply and who cannot',
@@ -318,7 +346,7 @@ export const translations = {
       limitedSpots: "Special price for limited time",
       priceIncrease: `After the offer, price increases to ${pricing.priceAfterLimit}`,
       spotsOccupied: "",
-      guarantee: `${metrics.guaranteeDays}-Day Satisfaction Guarantee or Your Money Back`,
+      guarantee: `${metrics.guaranteeDays}-Day Satisfaction Guarantee or we refund your money.`,
     },
 
     // Checkout Section
@@ -336,7 +364,21 @@ export const translations = {
       switchTo: "Prefer to pay on",
       switchToHotmart: "Hotmart",
       switchToEmbedded: "here",
-    },
+      complementosTitle: "In the CHECKOUT you will have access to these COMPLEMENTS you won't find anywhere else.",
+      complementos: [
+        {
+          title: "Business Plan in 10 Steps for the E-2 Visa",
+          price: "$14",
+          description: "A structured 42-page guide that shows you exactly what your business plan must include, how to organize it correctly, and what immigration authorities expect to see before approving your investor visa.",
+        },
+        {
+          title: "Franchise or Existing Business — What to Choose and What to Evaluate?",
+          price: "$8",
+          description: "A practical guide that helps you make an intelligent decision before investing, evaluating risks, advantages, and key points so your investment is solid and aligned with the E-2 Visa.",
+        },
+      ],
+      },
+
 
     // Thank You Page
     thankYou: {
@@ -411,8 +453,13 @@ export const translations = {
           description: bonuses.bonus1.description,
           value: bonuses.bonus1.value,
         },
+        {
+          title: bonuses.bonus2.name,
+          description: bonuses.bonus2.description,
+          value: bonuses.bonus2.value,
+        },
       ],
-      totalValue: "Bonus Value:",
+      totalValue: "Value of Both Bonuses:",
       free: "INCLUDED FREE",
       investment: "Your investment:",
       only: `Only ${pricing.currentPrice}`,
@@ -455,6 +502,10 @@ export const translations = {
         {
           question: "Do I need to know English for the E-2 Visa?",
           answer: "Speaking English is not a mandatory requirement to obtain the E-2 Visa, although it's highly recommended for managing your business. The guide is in Spanish and explains the entire process clearly, including what documents may need translation.",
+        },
+        {
+          question: "What happens if my country is on a recent list with pauses or restrictions on immigration processes?",
+          answer: "The E-2 Visa is a non-immigrant visa, so in many cases these types of pauses do not directly affect it. Even so, it is always advisable to verify updated information according to your country before starting the process.",
         },
       ],
       stillQuestions: "Have another question?",

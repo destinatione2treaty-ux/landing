@@ -24,6 +24,24 @@ const CheckoutSection = ({ defaultMode = 'embedded' }: CheckoutSectionProps) => 
           <p className="checkout-subtitle">
             {t.checkout.subtitle}
           </p>
+          {/* Complementos Section */}
+          <div className="complementos-section">
+            <p className="complementos-title">
+              {t.checkout.complementosTitle}
+            </p>
+            <div className="complementos-grid">
+              {t.checkout.complementos.map((item, index) => (
+                <div key={index} className="complemento-card">
+                  <div className="complemento-header">
+                    <h4 className="complemento-name">{item.title}</h4>
+                    <span className="complemento-price">{item.price}</span>
+                  </div>
+                  <p className="complemento-description">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           
           <div className="trust-badges">
             <div className="trust-badge">
