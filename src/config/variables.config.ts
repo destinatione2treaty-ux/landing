@@ -15,9 +15,9 @@ export const variablesConfig = {
   pricing: {
     originalPrice: '$47',
     currentPrice: '$27',
-    normalValue: '$127',       // ← CAMBIO: era $144
+    normalValue: '$127',
     bonusValue: '$100',
-    priceAfterLimit: '$127',   // ← CAMBIO: era $47
+    priceAfterLimit: '$127',
     currency: 'USD',
   },
 
@@ -34,49 +34,41 @@ export const variablesConfig = {
 
   // ===== ITEMS DEL PAQUETE PRINCIPAL =====
   packageItems: {
-    item1: {
-      name: 'Guía Principal: Destino E-2',
-      value: '$97',
+    es: {
+      item1: { name: 'Guía Principal: Destino E-2', value: '$97' },
+      item5: { name: 'Bono 1: Checklist Paso a Paso del Proceso E-2', value: '$15' },
     },
-    item2: {
-      name: 'Qué es la Visa E-2 y cómo funciona',
-      value: '$0',
-    },
-    item3: {
-      name: 'Tipos de inversión aceptados',
-      value: '$0',
-    },
-    item4: {
-      name: 'Proceso paso a paso completo',
-      value: '$0',
-    },
-    item5: {
-      name: 'Bono 1: Checklist Paso a Paso del Proceso E-2',  // ← CAMBIO
-      value: '$15',                                            // ← CAMBIO: era $47
+    en: {
+      item1: { name: 'Main Guide: Destino E-2', value: '$97' },
+      item5: { name: 'Bonus 1: Step-by-Step E-2 Process Checklist', value: '$15' },
     },
   },
 
   // ===== BONOS ADICIONALES =====
   bonuses: {
-    bonus1: {
-      name: 'Bono 1: Checklist Paso a Paso del Proceso E-2',  // ← CAMBIO
-      description: 'Un checklist práctico para evaluar si estás listo para comenzar, detectar vacíos en tu plan y organizarte antes de invertir dinero.',
-      value: '$15',  // ← CAMBIO: era $47
+    es: {
+      bonus1: {
+        name: 'Bono 1: Checklist Paso a Paso del Proceso E-2',
+        description: 'Un checklist práctico para evaluar si estás listo para comenzar, detectar vacíos en tu plan y organizarte antes de invertir dinero.',
+        value: '$15',
+      },
+      bonus2: {
+        name: 'Bono 2: Checklist Paso a paso para desarrollar el Plan de Negocios E-2',
+        description: 'Un checklist práctico que te permite ir etapa por etapa hasta tener un plan de negocios sólido para tu empresa y tu petición de visa E-2.',
+        value: '$15',
+      },
     },
-    bonus2: {
-      name: 'Bono 2: Checklist Paso a paso para desarrollar el Plan de Negocios E-2',  // ← CAMBIO
-      description: 'Un checklist práctico que te permite ir etapa por etapa hasta tener un plan de negocios sólido para tu empresa y tu petición de visa E-2.',  // ← CAMBIO
-      value: '$15',  // ← CAMBIO: era $37
-    },
-    bonus3: {
-      name: 'Plantilla Profesional del Plan de Negocios E-2',
-      description: 'Entiende qué espera ver inmigración y cómo estructurar tu idea correctamente.',
-      value: '$47',
-    },
-    bonus4: {
-      name: 'Actualizaciones gratuitas',
-      description: 'Recibe actualizaciones de la guía sin costo adicional cuando haya cambios en el proceso.',
-      value: '$0',
+    en: {
+      bonus1: {
+        name: 'Bonus 1: Step-by-Step E-2 Process Checklist',
+        description: "A practical checklist to evaluate if you're ready to begin, detect gaps in your plan, and organize yourself before investing money.",
+        value: '$15',
+      },
+      bonus2: {
+        name: 'Bonus 2: Step-by-Step E-2 Business Plan Development Checklist',
+        description: 'A practical checklist that takes you step by step until you have a solid business plan for your company and your E-2 visa petition.',
+        value: '$15',
+      },
     },
   },
 
@@ -194,7 +186,7 @@ export const variablesConfig = {
     ],
   },
 
-  // ===== TEXTOS ADICIONALES ===== FORNZANDO COMMIT ====
+  // ===== TEXTOS ADICIONALES =====
   additionalContent: {
     es: {
       urgencyBar: '¡Oferta de Lanzamiento! Últimos días con el precio especial de $27',

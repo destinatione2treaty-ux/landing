@@ -11,20 +11,26 @@ const {
   product,
   pricing,
   metrics,
-  packageItems,
-  bonuses,
   hero: heroConfig,
   benefits: benefitsConfig,
   testimonials: testimonialsConfig,
   additionalContent,
 } = variablesConfig;
 
+// Separar packageItems y bonuses por idioma
+const packageItemsEs = variablesConfig.packageItems.es;
+const packageItemsEn = variablesConfig.packageItems.en;
+const bonusesEs = variablesConfig.bonuses.es;
+const bonusesEn = variablesConfig.bonuses.en;
+
 const brandName = brandConfig.name;
 
 export const translations = {
+
+  // ==================== ESPAÑOL ====================
   es: {
     announcement: additionalContent.es.urgencyBar,
-    
+
     // Hero Section
     hero: {
       brand: brandName,
@@ -53,9 +59,9 @@ export const translations = {
       title3: "",
       subtitle: "Todo el contenido que necesitas para empezar tu proceso E-2 con claridad",
       features: [
-        `${packageItems.item1.name} - Valor: ${packageItems.item1.value}`,
-        `${bonuses.bonus1.name} - Valor: ${bonuses.bonus1.value}`,
-        `${bonuses.bonus2.name} - Valor: ${bonuses.bonus2.value}`,
+        `${packageItemsEs.item1.name} - Valor: ${packageItemsEs.item1.value}`,
+        `${bonusesEs.bonus1.name} - Valor: ${bonusesEs.bonus1.value}`,
+        `${bonusesEs.bonus2.name} - Valor: ${bonusesEs.bonus2.value}`,
         `Acceso inmediato al contenido completo`,
         `Formato PDF descargable`,
         `Actualizaciones gratuitas`,
@@ -84,14 +90,13 @@ export const translations = {
       headline1: "TRANSFORMA TU FUTURO EN",
       headline2: "ESTADOS UNIDOS HOY MISMO",
       items: [
-        { text: packageItems.item1.name, value: packageItems.item1.value },
-        { text: bonuses.bonus1.name, value: bonuses.bonus1.value },
-        { text: bonuses.bonus2.name, value: bonuses.bonus2.value },
+        { text: packageItemsEs.item1.name, value: packageItemsEs.item1.value },
+        { text: bonusesEs.bonus1.name, value: bonusesEs.bonus1.value },
+        { text: bonusesEs.bonus2.name, value: bonusesEs.bonus2.value },
         { text: 'Acceso inmediato', value: 'Incluido' },
         { text: 'Actualizaciones gratuitas', value: 'Incluido' },
         { text: 'Formato PDF descargable', value: 'Incluido' },
       ],
-
       normalValue: "Valor Total:",
       specialPrice: "Precio Especial de Lanzamiento:",
       ctaButton: `SÍ, QUIERO ACCESO INMEDIATO POR ${pricing.currentPrice}`,
@@ -132,8 +137,7 @@ export const translations = {
           description: "Una guía práctica que te ayuda a tomar una decisión inteligente antes de invertir, evaluando riesgos, ventajas y puntos clave para que tu inversión sea sólida y alineada con la Visa E-2.",
         },
       ],
-      },
-
+    },
 
     // Thank You Page
     thankYou: {
@@ -144,16 +148,16 @@ export const translations = {
       step1Title: "1. Revisa tu Email (IMPORTANTE)",
       step1Text: "En los próximos minutos recibirás un email de Hotmart con tu acceso a la guía. Revisa también tu carpeta de spam.",
       step2Title: "2. Descarga tu Guía",
-      step2Text: "Descarga el PDF de la guía y el checklist incluido. Guárdalos en un lugar seguro para futuras consultas.",
+      step2Text: "Descarga el PDF de la guía y los checklists incluidos. Guárdalos en un lugar seguro para futuras consultas.",
       step3Title: "3. Comienza tu Proceso",
       step3Text: "Lee la guía completa para entender el panorama. Luego usa el checklist para evaluar tu preparación.",
       whatYouGet: "Tu Paquete Incluye:",
       items: [
         'Guía Principal: Destino E-2 (PDF)',
-        'Checklist del Proceso E-2',
+        'Bono 1: Checklist Paso a Paso del Proceso E-2',
+        'Bono 2: Checklist del Plan de Negocios E-2',
         'Acceso inmediato',
         'Actualizaciones gratuitas',
-        'Soporte por email',
       ],
       questionsTitle: "¿Tienes Preguntas?",
       questionsText: "Estamos aquí para ayudarte",
@@ -204,14 +208,14 @@ export const translations = {
       subtitle: "Todo lo que necesitas para empezar tu proceso E-2 con el pie derecho",
       items: [
         {
-          title: bonuses.bonus1.name,
-          description: bonuses.bonus1.description,
-          value: bonuses.bonus1.value,
+          title: bonusesEs.bonus1.name,
+          description: bonusesEs.bonus1.description,
+          value: bonusesEs.bonus1.value,
         },
         {
-          title: bonuses.bonus2.name,
-          description: bonuses.bonus2.description,
-          value: bonuses.bonus2.value,
+          title: bonusesEs.bonus2.name,
+          description: bonusesEs.bonus2.description,
+          value: bonusesEs.bonus2.value,
         },
       ],
       totalValue: "Valor de ambos Bonos:",
@@ -252,7 +256,7 @@ export const translations = {
         },
         {
           question: "¿Qué pasa después de comprar la guía?",
-          answer: `Recibes acceso inmediato por email. Descargas el PDF de la guía y el checklist incluido. Puedes leerlo a tu ritmo y consultarlo cuantas veces necesites. Además, recibes actualizaciones gratuitas. Tienes ${metrics.guaranteeDays} días de garantía para solicitar reembolso si no cumple tus expectativas.`,
+          answer: `Recibes acceso inmediato por email. Descargas el PDF de la guía y los checklists incluidos. Puedes leerlos a tu ritmo y consultarlos cuantas veces necesites. Además, recibes actualizaciones gratuitas. Tienes ${metrics.guaranteeDays} días de garantía para solicitar reembolso si no cumple tus expectativas.`,
         },
         {
           question: "¿Necesito saber inglés para la Visa E-2?",
@@ -262,15 +266,16 @@ export const translations = {
           question: "¿Qué pasa si mi país está en una lista reciente con pausas o restricciones en procesos migratorios?",
           answer: "La Visa E-2 es una visa de no inmigrante, por lo que en muchos casos este tipo de pausas no la afectan directamente. Aun así, siempre es recomendable verificar la información actualizada según tu país antes de iniciar el proceso.",
         },
-        ],
+      ],
       stillQuestions: "¿Tienes otra pregunta?",
       contact: `Contáctanos directamente a ${brandConfig.contact.email}`,
     },
   },
 
+  // ==================== ENGLISH ====================
   en: {
     announcement: additionalContent.en.urgencyBar,
-    
+
     // Hero Section
     hero: {
       brand: brandName,
@@ -299,22 +304,21 @@ export const translations = {
       title3: "",
       subtitle: "All the content you need to start your E-2 process with clarity",
       features: [
-        `${packageItems.item1.name} - Value: ${packageItems.item1.value}`,
-        `${bonuses.bonus1.name} - Value: ${bonuses.bonus1.value}`,
-        `${bonuses.bonus2.name} - Value: ${bonuses.bonus2.value}`,
+        `${packageItemsEn.item1.name} - Value: ${packageItemsEn.item1.value}`,
+        `${bonusesEn.bonus1.name} - Value: ${bonusesEn.bonus1.value}`,
+        `${bonusesEn.bonus2.name} - Value: ${bonusesEn.bonus2.value}`,
         `Immediate access to complete content`,
         `Downloadable PDF format`,
         `Free updates`,
       ],
-
       additionalFeatures: [
-        'What the E-2 Visa really is and how it works',
-        'Who can apply and who cannot',
+        'What the E-2 Visa really is and how it works?',
+        'Who can apply and who cannot?',
         'Accepted investment types',
         'Franchise vs existing business',
         'Key business requirements',
         'Complete step-by-step process',
-        'How to maintain your active status',
+        'How to maintain your active status?',
         'Common mistakes to avoid',
       ],
       packageValue: "Total Package Value:",
@@ -331,8 +335,9 @@ export const translations = {
       headline1: "TRANSFORM YOUR FUTURE IN",
       headline2: "THE UNITED STATES TODAY",
       items: [
-        { text: packageItems.item1.name, value: packageItems.item1.value },
-        { text: packageItems.item5.name, value: packageItems.item5.value },
+        { text: packageItemsEn.item1.name, value: packageItemsEn.item1.value },
+        { text: bonusesEn.bonus1.name, value: bonusesEn.bonus1.value },
+        { text: bonusesEn.bonus2.name, value: bonusesEn.bonus2.value },
         { text: 'Immediate access', value: 'Included' },
         { text: 'Free updates', value: 'Included' },
         { text: 'Downloadable PDF format', value: 'Included' },
@@ -377,8 +382,7 @@ export const translations = {
           description: "A practical guide that helps you make an intelligent decision before investing, evaluating risks, advantages, and key points so your investment is solid and aligned with the E-2 Visa.",
         },
       ],
-      },
-
+    },
 
     // Thank You Page
     thankYou: {
@@ -389,16 +393,16 @@ export const translations = {
       step1Title: "1. Check Your Email (IMPORTANT)",
       step1Text: "In the next few minutes you'll receive an email from Hotmart with your access to the guide. Also check your spam folder.",
       step2Title: "2. Download Your Guide",
-      step2Text: "Download the PDF guide and included checklist. Save them in a safe place for future reference.",
+      step2Text: "Download the PDF guide and included checklists. Save them in a safe place for future reference.",
       step3Title: "3. Start Your Process",
       step3Text: "Read the complete guide to understand the full picture. Then use the checklist to evaluate your preparation.",
       whatYouGet: "Your Package Includes:",
       items: [
         'Main Guide: Destino E-2 (PDF)',
-        'E-2 Process Checklist',
+        'Bonus 1: Step-by-Step E-2 Process Checklist',
+        'Bonus 2: E-2 Business Plan Checklist',
         'Immediate access',
         'Free updates',
-        'Email support',
       ],
       questionsTitle: "Have Questions?",
       questionsText: "We're here to help",
@@ -445,18 +449,18 @@ export const translations = {
     bonuses: {
       badge: "BONUS INCLUDED",
       title: "PLUS, YOU RECEIVE THESE BONUSES",
-      titleHighlight: "COMPLETELY FREE",
+      titleHighlight: "COMPLETELY FREE!",
       subtitle: "Everything you need to start your E-2 process on the right foot",
       items: [
         {
-          title: bonuses.bonus1.name,
-          description: bonuses.bonus1.description,
-          value: bonuses.bonus1.value,
+          title: bonusesEn.bonus1.name,
+          description: bonusesEn.bonus1.description,
+          value: bonusesEn.bonus1.value,
         },
         {
-          title: bonuses.bonus2.name,
-          description: bonuses.bonus2.description,
-          value: bonuses.bonus2.value,
+          title: bonusesEn.bonus2.name,
+          description: bonusesEn.bonus2.description,
+          value: bonusesEn.bonus2.value,
         },
       ],
       totalValue: "Value of Both Bonuses:",
@@ -497,7 +501,7 @@ export const translations = {
         },
         {
           question: "What happens after buying the guide?",
-          answer: `You receive immediate access by email. Download the PDF guide and included checklist. You can read it at your own pace and consult it as many times as needed. Plus, you receive free updates. You have ${metrics.guaranteeDays} days guarantee to request a refund if it doesn't meet your expectations.`,
+          answer: `You receive immediate access by email. Download the PDF guide and included checklists. You can read them at your own pace and consult them as many times as needed. Plus, you receive free updates. You have ${metrics.guaranteeDays} days guarantee to request a refund if it doesn't meet your expectations.`,
         },
         {
           question: "Do I need to know English for the E-2 Visa?",
@@ -512,6 +516,7 @@ export const translations = {
       contact: `Contact us directly at ${brandConfig.contact.email}`,
     },
   },
+
 };
 
 // Hook para usar las traducciones
@@ -522,7 +527,6 @@ export const useTranslation = () => {
     if (forcedLang === 'es' || forcedLang === 'en') {
       return forcedLang;
     }
-
     // B. Detectar del navegador
     const browserLang = navigator.language.toLowerCase();
     return browserLang.startsWith('es') ? 'es' : 'en';
