@@ -22,7 +22,7 @@ export const integrationsConfig = {
 
   // Google Analytics - Desactivado por ahora
   googleAnalytics: {
-    enabled: false,
+    enabled: true,
     measurementId: 'G-54E018RR76',
   },
 
