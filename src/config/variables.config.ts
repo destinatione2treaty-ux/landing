@@ -194,7 +194,7 @@ export const variablesConfig = {
     ],
   },
 
-  // ===== TEXTOS ADICIONALES =====
+  // ===== TEXTOS ADICIONALES ===== FORNZANDO COMMIT ====
   additionalContent: {
     es: {
       urgencyBar: '¡Oferta de Lanzamiento! Últimos días con el precio especial de $27',
