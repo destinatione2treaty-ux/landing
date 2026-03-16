@@ -4,20 +4,15 @@
 export const integrationsConfig = {
   // Hotmart
   hotmart: {
-    // URL del checkout (CAMBIAR CUANDO LA TENGAS)
-    checkoutUrl: 'https://pay.hotmart.com/C100720841G',
-    
-    // Código de producto para checkout embebido
+    checkoutUrl: 'https://pay.hotmart.com/C100720841G?checkoutMode=10',
     productCode: 'dr28lsor',
-    
-    // Modo por defecto: 'hotmart' = botón directo (recomendado)
     defaultMode: 'hotmart' as 'embedded' | 'hotmart',
   },
 
   // Meta Pixel (Facebook Pixel) - Desactivado por ahora
   metaPixel: {
-    enabled: false,
-    pixelId: '',
+    enabled: true,
+    pixelId: '1597991878079905',
   },
 
   // Google Analytics - Desactivado por ahora
