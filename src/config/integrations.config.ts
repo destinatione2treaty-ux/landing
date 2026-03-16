@@ -12,7 +12,7 @@ export const integrationsConfig = {
   // Meta Pixel (Facebook Pixel) - Desactivado por ahora
   metaPixel: {
     enabled: true,
-    pixelId: '1597991878079905',
+    pixelId: '777723421695063',
   },
 
   // Google Analytics - Desactivado por ahora
