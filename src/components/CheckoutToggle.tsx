@@ -14,7 +14,12 @@ interface CheckoutToggleProps {
 const CheckoutToggle = ({ defaultMode }: CheckoutToggleProps) => {
   // Inicializamos el estado con el modo que venga desde la configuración
   const [selectedMode, setSelectedMode] = useState<CheckoutMode>(defaultMode);
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
+
+  const redirectButtonText =
+    typeof t.checkout.redirectButton === 'string'
+      ? t.checkout.redirectButton
+      : (t.checkout.redirectButton as { es?: string; en?: string } | undefined)?.es ?? '';
 
   // Si la configuración cambia (raro, pero buena práctica), actualizamos
   useEffect(() => {
@@ -27,7 +32,7 @@ const CheckoutToggle = ({ defaultMode }: CheckoutToggleProps) => {
   };
 
   // Usar URL de configuración
-  const hotmartUrl = integrationsConfig.hotmart.checkoutUrl;
+  const hotmartUrl = integrationsConfig.hotmart.checkoutUrl[language];
 
   return (
     <div className="checkout-toggle-container">
@@ -80,21 +85,16 @@ const CheckoutToggle = ({ defaultMode }: CheckoutToggleProps) => {
           <div className="hotmart-redirect-wrapper">
             <div className="redirect-card">
               <div className="secure-icon">🔒</div>
-              <h3>Finalizar compra de forma segura</h3>
-              <p>Serás redirigido a Hotmart para completar tu pago con métodos locales (Efectivo, PSE, Cuotas, etc).</p>
+                <h3>{t.checkout.redirectTitle}</h3>
+                <p>{t.checkout.redirectText}</p>
               
-              <a 
-                href={hotmartUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hotmart-button"
-              >
-                Ir a Pagar Ahora ➔
-              </a>
+                <a href={hotmartUrl} target="_blank" rel="noopener noreferrer" className="hotmart-button"> 
+                  {t.checkout.redirectButton}
+                </a>  
               
               <div className="security-badges">
-                <span>🛡️ 100% Seguro</span>
-                <span>⚡ Entrega Inmediata</span>
+                <span>{t.checkout.secure}</span>
+                <span>{t.checkout.instant}</span>
               </div>
             </div>
           </div>
