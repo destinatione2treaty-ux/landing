@@ -125,6 +125,11 @@ export const translations = {
       switchToHotmart: "Hotmart",
       switchToEmbedded: "aquí",
       complementosTitle: "En el CHECKOUT tendrás disponible estos COMPLEMENTOS que no encontrarás en otra parte.",
+      redirectTitle: "Finalizar compra de forma segura",
+      redirectText: "Serás redirigido a Hotmart para completar tu pago con métodos locales (Efectivo, PSE, Cuotas, etc).",
+      redirectButton: "Ir a Pagar Ahora ➔",
+      secure: "🛡️ 100% Seguro",
+      instant: "⚡ Entrega Inmediata",
       complementos: [
         {
           title: "Plan de Negocios en 10 pasos para la visa E-2",
@@ -369,6 +374,11 @@ export const translations = {
       switchTo: "Prefer to pay on",
       switchToHotmart: "Hotmart",
       switchToEmbedded: "here",
+      redirectTitle: "Complete your purchase securely",
+      redirectText: "You'll be redirected to Hotmart to complete your payment with card, PayPal and other available methods.",
+      redirectButton: "Pay Now ➔",
+      secure: "🛡️ 100% Secure",
+      instant: "⚡ Instant Delivery",
       complementosTitle: "In the CHECKOUT you will have access to these COMPLEMENTS you won't find anywhere else.",
       complementos: [
         {
