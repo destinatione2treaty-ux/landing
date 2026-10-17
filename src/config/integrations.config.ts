@@ -4,8 +4,14 @@
 export const integrationsConfig = {
   // Hotmart
   hotmart: {
-    checkoutUrl: 'https://pay.hotmart.com/C100720841G?checkoutMode=10',
-    productCode: 'dr28lsor',
+    checkoutUrl: {
+      es: 'https://pay.hotmart.com/C100720841G?checkoutMode=10',
+      en: 'https://pay.hotmart.com/P106899245B?checkoutMode=10&bid=1785123719558',
+    },
+    productCode: {
+      es: 'dr28lsor',
+      en: 'zx0xlc65', // o '' si no hay embebido en inglés
+    },
     defaultMode: 'hotmart' as 'embedded' | 'hotmart',
   },
 
